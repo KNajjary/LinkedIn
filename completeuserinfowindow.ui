@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CompleteUserInfoWindow</class>
+ <widget class="QMainWindow" name="CompleteUserInfoWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>651</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="tab_PersonaInfo">
+     <attribute name="title">
+      <string>Personal information</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>70</y>
+        <width>301</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="1">
+        <widget class="QLabel" name="label_Email">
+         <property name="text">
+          <string>Email</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_PhoneNumber">
+         <property name="text">
+          <string>Phone number</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QComboBox" name="comboBox_2">
+         <item>
+          <property name="text">
+           <string>خراسان رضوی</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="lineEdit_LastName"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_LastName">
+         <property name="text">
+          <string>Last name</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="FirstName">
+         <property name="text">
+          <string>First name</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLineEdit" name="lineEdit_Email"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QDateEdit" name="dateEdit_Birthdate"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLineEdit" name="lineEdit_PhoneNumber"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="lineEdit_FirstName"/>
+       </item>
+       <item row="9" column="0">
+        <widget class="QRadioButton" name="radioButton_Over18">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <bold>false</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>I'm over 18</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="label_Birthdate">
+         <property name="text">
+          <string>Birthdate</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="label_Country">
+         <property name="text">
+          <string>Country</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QComboBox" name="comboBox">
+         <property name="editable">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>ایران</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QComboBox" name="comboBox_3">
+         <item>
+          <property name="text">
+           <string>مشهد</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="label_City">
+         <property name="text">
+          <string>City</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_Province">
+         <property name="text">
+          <string>Province</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_EduInfo">
+     <attribute name="title">
+      <string>Educational information</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>60</y>
+        <width>271</width>
+        <height>327</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_Education">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_3">
+         <property name="sizeIncrement">
+          <size>
+           <width>90</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="lineEdit_2"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QSpinBox" name="spinBox">
+         <property name="minimum">
+          <number>1290</number>
+         </property>
+         <property name="maximum">
+          <number>1500</number>
+         </property>
+         <property name="singleStep">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>1403</number>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QSpinBox" name="spinBox_2">
+         <property name="minimum">
+          <number>1290</number>
+         </property>
+         <property name="maximum">
+          <number>1500</number>
+         </property>
+         <property name="value">
+          <number>1403</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QRadioButton" name="radioButton">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>I graduated</string>
+         </property>
+         <property name="shortcut">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QToolButton" name="toolButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>25</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_PastPositions">
+     <attribute name="title">
+      <string>Past positions</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>50</y>
+        <width>271</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_Education_2">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_7">
+         <property name="sizeIncrement">
+          <size>
+           <width>90</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit_8"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="lineEdit_9"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QSpinBox" name="spinBox_3">
+         <property name="minimum">
+          <number>1290</number>
+         </property>
+         <property name="maximum">
+          <number>1500</number>
+         </property>
+         <property name="value">
+          <number>1403</number>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QSpinBox" name="spinBox_4">
+         <property name="wrapping">
+          <bool>false</bool>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="minimum">
+          <number>1290</number>
+         </property>
+         <property name="maximum">
+          <number>1500</number>
+         </property>
+         <property name="value">
+          <number>1403</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QToolButton" name="toolButton_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>25</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="autoRepeat">
+       <bool>false</bool>
+      </property>
+      <property name="popupMode">
+       <enum>QToolButton::DelayedPopup</enum>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Done">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>510</y>
+      <width>80</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Done</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
