@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>822</width>
     <height>600</height>
    </rect>
   </property>
@@ -16,13 +16,16 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(170, 85, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>220</x>
       <y>10</y>
-      <width>651</width>
+      <width>431</width>
       <height>461</height>
      </rect>
     </property>
@@ -30,7 +33,11 @@
      <enum>Qt::RightToLeft</enum>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="tabPosition">
      <enum>QTabWidget::North</enum>
@@ -39,7 +46,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -224,10 +231,10 @@
      <widget class="QWidget" name="formLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>60</y>
+        <x>70</x>
+        <y>30</y>
         <width>271</width>
-        <height>327</height>
+        <height>371</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_Education">
@@ -304,13 +311,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
        <item row="11" column="1">
         <widget class="QRadioButton" name="radioButton">
          <property name="font">
@@ -332,19 +332,42 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
-     <widget class="QToolButton" name="toolButton">
+     <widget class="QPushButton" name="pushButton_AdEdu">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>25</width>
-        <height>26</height>
+        <width>31</width>
+        <height>27</height>
        </rect>
       </property>
       <property name="text">
        <string>+</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QScrollBar" name="verticalScrollBar">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>9</y>
+        <width>16</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </widget>
@@ -355,13 +378,13 @@
      <widget class="QWidget" name="formLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>80</x>
         <y>50</y>
         <width>271</width>
         <height>341</height>
        </rect>
       </property>
-      <layout class="QFormLayout" name="formLayout_Education_2">
+      <layout class="QFormLayout" name="formLayout_PastPosition">
        <item row="2" column="1">
         <widget class="QLineEdit" name="lineEdit_7">
          <property name="sizeIncrement">
@@ -447,26 +470,20 @@
        </item>
       </layout>
      </widget>
-     <widget class="QToolButton" name="toolButton_2">
+     <widget class="QPushButton" name="pushButton_AddPo">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>25</width>
-        <height>26</height>
+        <width>31</width>
+        <height>27</height>
        </rect>
       </property>
       <property name="text">
        <string>+</string>
       </property>
-      <property name="checkable">
+      <property name="flat">
        <bool>false</bool>
-      </property>
-      <property name="autoRepeat">
-       <bool>false</bool>
-      </property>
-      <property name="popupMode">
-       <enum>QToolButton::DelayedPopup</enum>
       </property>
      </widget>
     </widget>
@@ -474,8 +491,8 @@
    <widget class="QPushButton" name="pushButton_Done">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>510</y>
+      <x>390</x>
+      <y>490</y>
       <width>80</width>
       <height>27</height>
      </rect>
@@ -490,7 +507,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>822</width>
      <height>24</height>
     </rect>
    </property>

@@ -9,24 +9,34 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>687</width>
+    <height>522</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(190, 242, 255)</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>129</y>
-      <width>381</width>
-      <height>201</height>
+      <x>170</x>
+      <y>130</y>
+      <width>331</width>
+      <height>221</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Click the button to recive code&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="pushButton_SendCode">
        <property name="enabled">
@@ -37,13 +47,36 @@
          <pointsize>13</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(20,176,191);</string>
+       </property>
        <property name="text">
         <string>Send code</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_Code"/>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_Code">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Enter the code</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_WrongCode">
@@ -66,6 +99,9 @@
          <pointsize>13</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(20,176,191);</string>
+       </property>
        <property name="text">
         <string>Sign in</string>
        </property>
@@ -79,7 +115,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>687</width>
      <height>24</height>
     </rect>
    </property>

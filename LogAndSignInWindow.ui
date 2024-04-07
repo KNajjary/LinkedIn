@@ -6,21 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>679</width>
+    <height>524</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(190,242,255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>20</y>
-      <width>421</width>
-      <height>708</height>
+      <x>320</x>
+      <y>80</y>
+      <width>322</width>
+      <height>703</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_2">
@@ -58,6 +64,12 @@
      </item>
      <item row="8" column="1">
       <widget class="QPushButton" name="PushButton_LogIn">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(20,176,191);</string>
+       </property>
        <property name="text">
         <string>Log In</string>
        </property>
@@ -68,19 +80,39 @@
        <property name="enabled">
         <bool>true</bool>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(20,176,191);</string>
+       </property>
        <property name="text">
         <string>Continue</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="LineEdit_Username"/>
+      <widget class="QLineEdit" name="LineEdit_Username">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QLineEdit" name="LineEdit_Password"/>
+      <widget class="QLineEdit" name="LineEdit_Password">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
       <widget class="QLabel" name="SignInInfo">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Choose your username and password.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -114,7 +146,11 @@
       </widget>
      </item>
      <item row="12" column="0" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_Capcha"/>
+      <widget class="QLineEdit" name="lineEdit_Capcha">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
      </item>
      <item row="11" column="0" colspan="2">
       <widget class="QLabel" name="label_CapchaCode">
@@ -189,14 +225,49 @@
       </widget>
      </item>
     </layout>
+    <zorder>TextLabel1</zorder>
+    <zorder>PushButton_LogIn</zorder>
+    <zorder>PushButton_Continue</zorder>
+    <zorder>LineEdit_Username</zorder>
+    <zorder>LineEdit_Password</zorder>
+    <zorder>SignInInfo</zorder>
+    <zorder>pushButton_HaventSigned</zorder>
+    <zorder>label_UsernReq</zorder>
+    <zorder>label_PassReq</zorder>
+    <zorder>lineEdit_Capcha</zorder>
+    <zorder>label_CapchaCode</zorder>
+    <zorder>label_WrongCapcha</zorder>
+    <zorder>label_CapchaReq</zorder>
+    <zorder>label_UsernameNotFound</zorder>
+    <zorder>label_WrongPassword</zorder>
+    <zorder>label_UsernamAlreadyExists</zorder>
+    <zorder>TextLabel2</zorder>
    </widget>
+   <widget class="QLabel" name="ImLabel1">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>301</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <zorder>ImLabel1</zorder>
+   <zorder>formLayoutWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>679</width>
      <height>24</height>
     </rect>
    </property>

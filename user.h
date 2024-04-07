@@ -29,21 +29,22 @@ class User
 
 public:
     User(QString , QString);
+    void AddToDB();
 
     bool SetFirstName(QString);
-
-    /*
-     * bool SetLastName(QString);
+    bool SetLastName(QString);
     bool SetPhone(QString);
     bool SetEmail(QString);
-    bool SetOver18(bool);
+
+
+    /*bool SetOver18(bool);
     bool SetAddress(struct Address);
     bool SetIsStudent(bool);
     bool SetBirthDate(struct Date);
 */
     void SetLoggedIn(bool);
     static bool DoesUsernameExist(QString );
-    static unsigned int CheckPassword(QString , QString);
+    static unsigned int CheckPasswordInDB(QString , QString);
     //void
 
 };

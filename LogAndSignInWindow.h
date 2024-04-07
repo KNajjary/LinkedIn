@@ -1,10 +1,15 @@
 #ifndef LOGANDSIGNINWINDOW_H
 #define LOGANDSIGNINWINDOW_H
 
+#include <QPropertyAnimation>
 #include <QMainWindow>
 #include "verificationwindow.h"
+#include "completeuserinfowindow.h"
+#include "user.h"
 namespace Ui {
-class LogAndSignInWindow;
+    class LogAndSignInWindow;
+    //QString Password= NULL;
+    //QString Username= NULL;
 }
 
 class LogAndSignInWindow : public QMainWindow
@@ -29,7 +34,11 @@ private:
     unsigned int CapchaCode;
     static QString Username,
         Password;
-    friend VerificationWindow;
+    //User user;
+    friend class VerificationWindow  ;
+    friend class CompleteUserInfoWindow;
+
+    QPropertyAnimation * Animation;
 };
 
 #endif // LOGANDSIGNINWINDOW_H

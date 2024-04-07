@@ -4,6 +4,7 @@
 #include "functions.h"
 #include "user.h"
 #include "verificationwindow.h"
+#include <QPropertyAnimation>
 //#include <QRandomGenerator>
 QString LogAndSignInWindow::Password=NULL;
 QString LogAndSignInWindow::Username=NULL;
@@ -31,6 +32,25 @@ LogAndSignInWindow::LogAndSignInWindow(QWidget *parent)
 
     CapchaCode=rand()%(100000-1000)+1000;
     ui->label_CapchaCode->setText(QString::number(CapchaCode));
+    /*QRect screen(0,0,this->width(),this->height());
+    ui->ImLabel1->setGeometry(screen);*/
+
+
+
+
+    QPixmap Im1("D://Linked In//LogAndSignInWindowIm1.png");
+    int Label1W,Label1H;
+    Label1H=ui->ImLabel1->height();
+    Label1W=ui->ImLabel1->width();
+    ui->ImLabel1->setPixmap(Im1.scaled(Label1W,Label1H,Qt::KeepAspectRatio));
+
+    Animation = new QPropertyAnimation(ui->ImLabel1,"geometry");
+    Animation->setDuration(3500);
+    Animation->setStartValue(ui->ImLabel1->geometry());
+    Animation->setEndValue(QRect(ui->ImLabel1->geometry().left(),50,ui->ImLabel1->width(),ui->ImLabel1->height()));
+    Animation->start();
+
+
 }
 
 LogAndSignInWindow::~LogAndSignInWindow()
@@ -54,17 +74,17 @@ void LogAndSignInWindow::on_PushButton_LogIn_clicked()
     }
 
 
-    if(User::CheckPassword(un,p)==1){
+    if(User::CheckPasswordInDB(un,p)==1){
         this->close();
         ui->~LogAndSignInWindow();
         return;
     }
-    if(User::CheckPassword(un,p)==0){
+    if(User::CheckPasswordInDB(un,p)==0){
         ui->label_WrongPassword->show();
         return;
     }
 
-    if(User::CheckPassword(un,p)==2){
+    if(User::CheckPasswordInDB(un,p)==2){
         ui->label_UsernameNotFound->show();
         return;
     }

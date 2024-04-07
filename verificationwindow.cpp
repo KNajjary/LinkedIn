@@ -25,9 +25,13 @@ void VerificationWindow::on_pushButton_SendCode_clicked()
 {
     QMessageBox m;
     QString s;
+
+
     s.setNum(VerifCode);
+    s.prepend("Your verification code is:\n");
 
     m.setText(s);
+    //m.text().resize(18);
     m.exec();
     ui->pushButton_SendCode->setDisabled(true);
 }
@@ -50,12 +54,17 @@ void VerificationWindow::on_pushButton_SignIn_clicked()
     else{
 
         QMessageBox::information(this,"Sign in","✨ You have signed in successfuly ✨");
-        User u(LogAndSignInWindow::Username,LogAndSignInWindow::Password);
-        u.SetLoggedIn(true);
+        User  User(LogAndSignInWindow::Username,LogAndSignInWindow::Password);
+        ////////////////////////////Problem:::
+        User.AddToDB();
+        User.SetLoggedIn(true);
+        //Username = LogAndSignInWindow::Username;
+        //Password = LogAndSignInWindow::Password;
 
         CompleteUserInfoWindow* w = new CompleteUserInfoWindow;
+        //w->SetUser(&User);
         w->show();
-        w->SetUser(&u);
+        //
         //if(w->GetUser() == nullptr)printf("#############eeeeee");
 
 

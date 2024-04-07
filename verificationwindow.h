@@ -2,11 +2,13 @@
 #define VERIFICATIONWINDOW_H
 
 #include <QMainWindow>
-
+#include "user.h"
+#include "completeuserinfowindow.h"
 namespace Ui {
 class VerificationWindow;
 }
-
+//extern QString Password;
+//extern QString Username;
 class VerificationWindow : public QMainWindow
 {
     Q_OBJECT
@@ -23,6 +25,8 @@ private slots:
 private:
     Ui::VerificationWindow *ui;
     unsigned int VerifCode;
+    //User * User;
+    //friend CompleteUserInfoWindow;
 };
 
 #endif // VERIFICATIONWINDOW_H
