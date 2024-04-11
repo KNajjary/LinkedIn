@@ -37,3 +37,17 @@ void CloseDatabase(QSqlDatabase db)
 
     CloseDatabase(database);
 }*/
+bool IsMadeOfLetters(QString s){
+    std::string a=s.toStdString();
+    unsigned int i;
+    for(i=0;a[i] && ((a[i]>= 'a' && a[i]<='z') || (a[i]>='A' && a[i]<='Z') );i++);
+    if(!a[i])return true;
+    else return false;
+}
+bool IsMadeOfNumbers(QString s){
+    std::string a=s.toStdString();
+    unsigned int i;
+    for(i=0;a[i] && a[i]>= '0' && a[i]<='9'  ;i++);
+    if(!a[i])return true;
+    else return false;
+}

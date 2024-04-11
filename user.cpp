@@ -273,3 +273,36 @@ bool User::SetBirthDate(struct Date){
     CloseDatabase(database);
 }
 */
+bool User::NameCheckValid(QString s)
+{
+    if(IsMadeOfLetters(s)) return true;
+    else return false;
+}
+ bool User::PhoneCheckValid(QString s)
+{
+     if(IsMadeOfNumbers(s)) return true;
+     else return false;
+}
+bool User::EmailCheckValid(QString s)
+{
+    std::string a=s.toStdString();
+    unsigned int i;
+    bool DotFound =false,AtsFound =false;//.  @
+    for(i=0;a[i] ;i++){
+        if(a[i]== '@')AtsFound=true;
+        if(a[i]=='.')DotFound=true;
+    }
+    if( DotFound && AtsFound)return true;
+    else return false;
+}
+bool User::MajorCheckValid(QString s)
+{
+    if(IsMadeOfLetters(s)) return true;
+    else return false;
+}
+bool User::EmploymentTipeCheckValid(QString s)
+{
+    if(IsMadeOfLetters(s)) return true;
+    else return false;
+}
+

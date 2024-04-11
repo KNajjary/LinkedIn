@@ -35,6 +35,14 @@ public:
     bool SetLastName(QString);
     bool SetPhone(QString);
     bool SetEmail(QString);
+    static bool NameCheckValid(QString);
+    static bool PhoneCheckValid(QString);
+    static bool EmailCheckValid(QString);
+    static bool MajorCheckValid(QString);
+    static bool EmploymentTipeCheckValid(QString);
+
+
+
 
 
     /*bool SetOver18(bool);

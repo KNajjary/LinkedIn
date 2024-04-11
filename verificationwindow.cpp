@@ -14,6 +14,14 @@ VerificationWindow::VerificationWindow(QWidget *parent)
     VerifCode=rand()%(10000-1000)+1000;
     ui->label_EmptyCode->hide();
     ui->label_WrongCode->hide();
+
+
+
+    QPixmap Im1("D://Linked In//VerificationWindowIm1.png");
+    int Label1W,Label1H;
+    Label1H=ui->ImLabel1->height();
+    Label1W=ui->ImLabel1->width();
+    ui->ImLabel1->setPixmap(Im1.scaled(Label1W,Label1H,Qt::KeepAspectRatio));
 }
 
 VerificationWindow::~VerificationWindow()
@@ -30,7 +38,9 @@ void VerificationWindow::on_pushButton_SendCode_clicked()
     s.setNum(VerifCode);
     s.prepend("Your verification code is:\n");
 
+
     m.setText(s);
+
     //m.text().resize(18);
     m.exec();
     ui->pushButton_SendCode->setDisabled(true);

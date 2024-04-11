@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>522</height>
+    <width>692</width>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,8 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>130</y>
+      <x>340</x>
+      <y>70</y>
       <width>331</width>
       <height>221</height>
      </rect>
@@ -109,13 +109,26 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="ImLabel1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>311</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>687</width>
+     <width>692</width>
      <height>24</height>
     </rect>
    </property>

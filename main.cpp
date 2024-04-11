@@ -15,10 +15,10 @@ int main(int argc, char *argv[])
         ww.show();
 
 
-    /*CompleteUserInfoWindow cw;
+    CompleteUserInfoWindow cw;
         cw.show();
 
-    VerificationWindow vw;
+    /*VerificationWindow vw;
         vw.show();
 
     LogAndSignInWindow lw;

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>822</width>
-    <height>600</height>
+    <width>797</width>
+    <height>787</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,16 +17,16 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(170, 85, 255);</string>
+   <string notr="true">background-color: rgb(190, 242, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>10</y>
+      <x>200</x>
+      <y>0</y>
       <width>431</width>
-      <height>461</height>
+      <height>721</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -46,7 +46,7 @@ background-color: rgb(255, 255, 255);</string>
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -61,17 +61,57 @@ background-color: rgb(255, 255, 255);</string>
      <attribute name="title">
       <string>Personal information</string>
      </attribute>
-     <widget class="QWidget" name="gridLayoutWidget">
+     <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>70</y>
-        <width>301</width>
-        <height>321</height>
+        <x>79</x>
+        <y>10</y>
+        <width>281</width>
+        <height>667</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="FirstName">
+         <property name="text">
+          <string>First name</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_FirstName"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="InValidFirstNam">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Name you entered is not valid. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_LastName">
+         <property name="text">
+          <string>Last name</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_LastName"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="InvalidLastNam">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Name you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QLabel" name="label_Email">
          <property name="text">
           <string>Email</string>
@@ -84,7 +124,17 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item>
+        <widget class="QLineEdit" name="lineEdit_Email"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="InvalidEmail">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Emai you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QLabel" name="label_PhoneNumber">
          <property name="text">
           <string>Phone number</string>
@@ -94,7 +144,49 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
+       <item>
+        <widget class="QLineEdit" name="lineEdit_PhoneNumber"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="InvalidPhone">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Phone number you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_Country">
+         <property name="text">
+          <string>Country</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <property name="editable">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>ایران</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_Province">
+         <property name="text">
+          <string>Province</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QComboBox" name="comboBox_2">
          <item>
           <property name="text">
@@ -103,42 +195,39 @@ background-color: rgb(255, 255, 255);</string>
          </item>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLineEdit" name="lineEdit_LastName"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="label_LastName">
+       <item>
+        <widget class="QLabel" name="label_City">
          <property name="text">
-          <string>Last name</string>
+          <string>City</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="FirstName">
+       <item>
+        <widget class="QComboBox" name="comboBox_3">
+         <item>
+          <property name="text">
+           <string>مشهد</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_Birthdate">
          <property name="text">
-          <string>First name</string>
+          <string>Birthdate</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QLineEdit" name="lineEdit_Email"/>
-       </item>
-       <item row="7" column="0">
+       <item>
         <widget class="QDateEdit" name="dateEdit_Birthdate"/>
        </item>
-       <item row="3" column="0">
-        <widget class="QLineEdit" name="lineEdit_PhoneNumber"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLineEdit" name="lineEdit_FirstName"/>
-       </item>
-       <item row="9" column="0">
+       <item>
         <widget class="QRadioButton" name="radioButton_Over18">
          <property name="font">
           <font>
@@ -155,72 +244,6 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
-        <widget class="QLabel" name="label_Birthdate">
-         <property name="text">
-          <string>Birthdate</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLabel" name="label_Country">
-         <property name="text">
-          <string>Country</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QComboBox" name="comboBox">
-         <property name="editable">
-          <bool>false</bool>
-         </property>
-         <item>
-          <property name="text">
-           <string>ایران</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QComboBox" name="comboBox_3">
-         <item>
-          <property name="text">
-           <string>مشهد</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLabel" name="label_City">
-         <property name="text">
-          <string>City</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLabel" name="label_Province">
-         <property name="text">
-          <string>Province</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </widget>
@@ -231,15 +254,15 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QWidget" name="formLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>30</y>
-        <width>271</width>
-        <height>371</height>
+        <x>60</x>
+        <y>120</y>
+        <width>311</width>
+        <height>411</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_Education">
        <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QLineEdit" name="EducationInfo1Major">
          <property name="sizeIncrement">
           <size>
            <width>90</width>
@@ -248,35 +271,35 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="4" column="1">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>TextLabel</string>
+          <string>School or univercity name</string>
          </property>
         </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
        </item>
        <item row="5" column="1">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
+        <widget class="QLineEdit" name="EducationInfo1SchoolName"/>
        </item>
        <item row="6" column="1">
-        <widget class="QLineEdit" name="lineEdit_2"/>
-       </item>
-       <item row="7" column="1">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>TextLabel</string>
+          <string>Grade</string>
          </property>
         </widget>
        </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="EducationInfo1Grade"/>
+       </item>
        <item row="8" column="1">
-        <widget class="QSpinBox" name="spinBox">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Start year</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QSpinBox" name="EducationInfo1StartYear">
          <property name="minimum">
           <number>1290</number>
          </property>
@@ -291,15 +314,15 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="9" column="1">
+       <item row="10" column="1">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>TextLabel</string>
+          <string>End year</string>
          </property>
         </widget>
        </item>
-       <item row="10" column="1">
-        <widget class="QSpinBox" name="spinBox_2">
+       <item row="11" column="1">
+        <widget class="QSpinBox" name="EducationInfo1EndYear">
          <property name="minimum">
           <number>1290</number>
          </property>
@@ -311,8 +334,8 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="11" column="1">
-        <widget class="QRadioButton" name="radioButton">
+       <item row="12" column="1">
+        <widget class="QRadioButton" name="Finished">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -335,7 +358,14 @@ background-color: rgb(255, 255, 255);</string>
        <item row="1" column="1">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>TextLabel</string>
+          <string>Major</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="MajorNotValid">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Major you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -378,15 +408,15 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QWidget" name="formLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>50</y>
-        <width>271</width>
-        <height>341</height>
+        <x>70</x>
+        <y>80</y>
+        <width>306</width>
+        <height>411</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_PastPosition">
        <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_7">
+        <widget class="QLineEdit" name="PrevEmploymets0CompanyName">
          <property name="sizeIncrement">
           <size>
            <width>90</width>
@@ -396,34 +426,34 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>TextLabel</string>
+          <string>My post in the company</string>
          </property>
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_8"/>
+        <widget class="QLineEdit" name="PrevEmploymets0Post"/>
        </item>
        <item row="5" column="1">
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>TextLabel</string>
+          <string>Employment's tipe</string>
          </property>
         </widget>
        </item>
        <item row="6" column="1">
-        <widget class="QLineEdit" name="lineEdit_9"/>
+        <widget class="QLineEdit" name="PrevEmploymets0EmploymentTipe"/>
        </item>
-       <item row="7" column="1">
+       <item row="8" column="1">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>TextLabel</string>
+          <string>Start year</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="1">
-        <widget class="QSpinBox" name="spinBox_3">
+       <item row="9" column="1">
+        <widget class="QSpinBox" name="PrevEmploymets0StartYear">
          <property name="minimum">
           <number>1290</number>
          </property>
@@ -435,15 +465,15 @@ background-color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </item>
-       <item row="9" column="1">
+       <item row="10" column="1">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>TextLabel</string>
+          <string>End year</string>
          </property>
         </widget>
        </item>
-       <item row="10" column="1">
-        <widget class="QSpinBox" name="spinBox_4">
+       <item row="11" column="1">
+        <widget class="QSpinBox" name="PrevEmploymets0EndYear">
          <property name="wrapping">
           <bool>false</bool>
          </property>
@@ -462,9 +492,16 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="label_13">
+        <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>TextLabel</string>
+          <string>Company's name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="EmployTypeNotValid">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Employment's tipe you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -491,11 +528,14 @@ background-color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="pushButton_Done">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>490</y>
-      <width>80</width>
-      <height>27</height>
+      <x>660</x>
+      <y>670</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(20,176,191);</string>
     </property>
     <property name="text">
      <string>Done</string>
@@ -507,7 +547,7 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>822</width>
+     <width>797</width>
      <height>24</height>
     </rect>
    </property>
