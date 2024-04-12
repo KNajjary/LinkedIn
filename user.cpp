@@ -88,13 +88,7 @@ unsigned int User::CheckPasswordInDB(QString un, QString p){
 
     return state;
 }
-
-
-bool User::SetFirstName(QString n){
-    FirstName=n;
-
-    qDebug()<< "Start:::";
-
+bool User::SetFirstNameInDB(QString n){
     bool result=true;
     QSqlDatabase database;
     SetupDatabase(database);
@@ -140,12 +134,7 @@ bool User::SetFirstName(QString n){
     CloseDatabase(database);
     return result;
 }
-
-bool User::SetLastName(QString n){
-    LastName=n;
-
-    //qDebug()<< "Start:::";
-
+bool User::SetLastNameInDB(QString n){
     bool result=true;
     QSqlDatabase database;
     SetupDatabase(database);
@@ -169,10 +158,7 @@ bool User::SetLastName(QString n){
     CloseDatabase(database);
     return result;
 }
-
-bool User::SetPhone(QString s){
-    Phone=s;
-
+bool User::SetPhoneInDB(QString s) {
     bool result=true;
     QSqlDatabase database;
     SetupDatabase(database);
@@ -196,83 +182,230 @@ bool User::SetPhone(QString s){
     CloseDatabase(database);
     return result;
 }
-bool User::SetEmail(QString n){
-    Email=n;
-
-    bool result=true;
+bool User::SetEmailInDB(QString n){
+    bool result=false;
     QSqlDatabase database;
     SetupDatabase(database);
     QSqlQuery qr;
-    if (! qr.prepare("UPDATE Users SET Email = ? WHERE Username = ? ;"))
+    if (qr.prepare("UPDATE Users SET Email = ? WHERE Username = ? ;"))
     {
-        qDebug() << "in function User::SetEmail : Query preparation failed :" << qr.lastError().text();
-
-    }
-    else{
         qr.addBindValue(n);
         qr.addBindValue(Username);
-        if(! qr.exec()){
-            result=false;
-            //QSqlError er = ;
-
-            qDebug() <<  "in function User::SetEmail : Query execution failed:" << qr.lastError().text();
-
-        }
+        if(qr.exec())
+            result=true;
     }
     CloseDatabase(database);
     return result;
 }
-/*bool User::SetOver18(bool){
+bool User::SetOver18InDB(bool b){
+    bool result=false;
+    unsigned int n;
+    if(b)n=1;
+    else n=0;
     QSqlDatabase database;
     SetupDatabase(database);
     QSqlQuery qr;
-
-
-    CloseDatabase(database);
-}
-bool User::SetAddress(struct Address){
-    Phone=s;
-
-    bool result=true;
-    QSqlDatabase database;
-    SetupDatabase(database);
-    QSqlQuery qr;
-    if (! qr.prepare("UPDATE Users SET Phone = ? WHERE Username = ? ;"))
+    if (qr.prepare("UPDATE Users SET Over18 = ? WHERE Username = ? ;"))
     {
-        qDebug() << "in function User::SetPhone : Query preparation failed :" << qr.lastError().text();
-
-    }
-    else{
-        qr.addBindValue(s);
+        qr.addBindValue(n);
         qr.addBindValue(Username);
-        if(! qr.exec()){
-            result=false;
-            //QSqlError er = ;
-
-            qDebug() <<  "in function User::SetPhone : Query execution failed:" << qr.lastError().text();
-
-        }
+        if(qr.exec())
+            result=true;
     }
     CloseDatabase(database);
     return result;
 }
-bool User::SetIsStudent(bool){
+bool User::SetAddress_CountryInDB(QString n){
+    bool result=false;
     QSqlDatabase database;
     SetupDatabase(database);
     QSqlQuery qr;
-
-
+    if (qr.prepare("UPDATE Users SET Address.Country = ? WHERE Username = ? ;"))
+    {
+        qr.addBindValue(n);
+        qr.addBindValue(Username);
+        if(qr.exec())
+            result=true;
+    }
     CloseDatabase(database);
+    return result;
 }
-bool User::SetBirthDate(struct Date){
+bool User::SetAddress_ProvinceInDB(QString n){
+    bool result=false;
     QSqlDatabase database;
     SetupDatabase(database);
     QSqlQuery qr;
-
-
+    if (qr.prepare("UPDATE Users SET Address.Province = ? WHERE Username = ? ;"))
+    {
+        qr.addBindValue(n);
+        qr.addBindValue(Username);
+        if(qr.exec())
+            result=true;
+    }
     CloseDatabase(database);
+    return result;
 }
-*/
+bool User::SetAddress_CityInDB(QString n){
+    bool result=false;
+    QSqlDatabase database;
+    SetupDatabase(database);
+    QSqlQuery qr;
+    if (qr.prepare("UPDATE Users SET Address.City = ? WHERE Username = ? ;"))
+    {
+        qr.addBindValue(n);
+        qr.addBindValue(Username);
+        if(qr.exec())
+            result=true;
+    }
+    CloseDatabase(database);
+    return result;
+}
+bool User::SetIsStudentInDB(bool b){
+    bool result=false;
+    unsigned int n;
+    if(b)n=1;
+    else n=0;
+    QSqlDatabase database;
+    SetupDatabase(database);
+    QSqlQuery qr;
+    if (qr.prepare("UPDATE Users SET IsStudent = ? WHERE Username = ? ;"))
+    {
+        qr.addBindValue(n);
+        qr.addBindValue(Username);
+        if(qr.exec())
+            result=true;
+    }
+    CloseDatabase(database);
+    return result;
+}
+bool User::SetBirthDate_YearInDB(unsigned short n){
+    bool result=false;
+    QSqlDatabase database;
+    SetupDatabase(database);
+    QSqlQuery qr;
+    if (qr.prepare("UPDATE Users SET BirthDate.Year = ? WHERE Username = ? ;"))
+    {
+        qr.addBindValue(n);
+        qr.addBindValue(Username);
+        if(qr.exec())
+            result=true;
+    }
+    CloseDatabase(database);
+    return result;
+}
+bool User::SetBirthDate_MonthInDB(unsigned short n){
+    bool result=false;
+    QSqlDatabase database;
+    SetupDatabase(database);
+    QSqlQuery qr;
+    if (qr.prepare("UPDATE Users SET BirthDate.Month = ? WHERE Username = ? ;"))
+    {
+        qr.addBindValue(n);
+        qr.addBindValue(Username);
+        if(qr.exec())
+            result=true;
+    }
+    CloseDatabase(database);
+    return result;
+}
+bool User::SetBirthDate_DayInDB(unsigned short n){
+    bool result=false;
+    QSqlDatabase database;
+    SetupDatabase(database);
+    QSqlQuery qr;
+    if (qr.prepare("UPDATE Users SET BirthDate.Day = ? WHERE Username = ? ;"))
+    {
+        qr.addBindValue(n);
+        qr.addBindValue(Username);
+        if(qr.exec())
+            result=true;
+    }
+    CloseDatabase(database);
+    return result;
+}
+
+bool User::SetFirstName(QString n){
+    if(!NameCheckValid(n))
+        return false;
+
+    FirstName=n;
+    if(! SetFirstNameInDB(n))
+        qDebug()<< "error updating FirstName in data base."  ;
+    return true;
+}
+
+bool User::SetLastName(QString n){
+    if(!NameCheckValid(n))
+        return false;
+
+    LastName=n;
+    if(! SetLastNameInDB(n))
+        qDebug()<< "error updating LastName in data base." ;
+    return true;
+}
+
+bool User::SetPhone(QString s){
+    if(! PhoneCheckValid(s))
+        return false;
+    Phone=s;
+    if(! SetPhoneInDB(s))
+        qDebug()<< "error updating Phone in data base." ;
+    return true;
+
+}
+bool User::SetEmail(QString s){
+    Email=s;
+    if(! EmailCheckValid(s))
+        return false;
+    Phone=s;
+    if(! SetEmailInDB(s))
+        qDebug()<< "error updating Email in data base." ;
+    return true;
+
+}
+void User::SetOver18(bool b){
+    Over18=b;
+    if(! SetOver18InDB(b))
+        qDebug()<< "error updating Over18 in data base." ;
+
+}
+
+void User::SetIsStudent(bool b){
+    IsStudent=b;
+    if(! SetIsStudentInDB(b))
+        qDebug()<< "error updating IsStudent in data base." ;
+}
+void User::SetAddress_Country(QString a){
+    Address.Country=a;
+    if(! SetAddress_CountryInDB(a))
+        qDebug()<< "error updating Address.Country in data base." ;
+}
+void User::SetAddress_Province(QString a){
+    Address.Province=a;
+    if(! SetAddress_ProvinceInDB(a))
+        qDebug()<< "error updating Address.Province in data base." ;
+}
+void User::SetAddress_City(QString a){
+    Address.City=a;
+    if(! SetAddress_CityInDB(a))
+        qDebug()<< "error updating Address.City in data base." ;
+}
+void User::SetBirthDate_Year(unsigned short int b){
+    BirthDate.Year= b;
+    if(! SetBirthDate_YearInDB(b))
+        qDebug()<< "error updating BirthDate.Year in data base." ;
+}
+void User::SetBirthDate_Month(unsigned short b){
+    BirthDate.Month= b;
+    if(! SetBirthDate_MonthInDB(b))
+        qDebug()<< "error updating BirthDate.Month in data base." ;
+}
+void User::SetBirthDate_Day(unsigned short b){
+    BirthDate.Day= b;
+    if(! SetBirthDate_DayInDB(b))
+        qDebug()<< "error updating BirthDate.Day in data base." ;
+}
+
 bool User::NameCheckValid(QString s)
 {
     if(IsMadeOfLetters(s)) return true;

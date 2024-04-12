@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
 
     /*VerificationWindow vw;
         vw.show();
-
-    LogAndSignInWindow lw;
-    lw.show();*/
+*/
+    //LogAndSignInWindow lw;
+    //lw.show();
 
 
     //}
