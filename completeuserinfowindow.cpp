@@ -13,10 +13,10 @@ CompleteUserInfoWindow::CompleteUserInfoWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //user = NULL;
-    ui->EmployTypeNotValid->hide();
+    ui->label_EmployTypeNotValid->hide();
     ui->InValidFirstNam->hide();
     ui->InvalidLastNam->hide();
-    ui->MajorNotValid->hide();
+    ui->label_MajorNotValid->hide();
     ui->InvalidEmail->hide();
     ui->InvalidPhone->hide();
 
@@ -52,10 +52,10 @@ CompleteUserInfoWindow::~CompleteUserInfoWindow()
 void CompleteUserInfoWindow::on_pushButton_Done_clicked()
 {
 
-    ui->EmployTypeNotValid->hide();
+    ui->label_EmployTypeNotValid->hide();
     ui->InValidFirstNam->hide();
     ui->InvalidLastNam->hide();
-    ui->MajorNotValid->hide();
+    ui->label_MajorNotValid->hide();
     ui->InvalidEmail->hide();
     ui->InvalidPhone->hide();
 
@@ -100,17 +100,47 @@ void CompleteUserInfoWindow::on_pushButton_Done_clicked()
             invalidity = true;
         }
     }
-    //if(! ui.)
-    User.SetAddress_Country(ui->comboBox_Country->currentText());
-    User.SetAddress_Province(ui->comboBox_Province->currentText());
-    User.SetAddress_City(ui->comboBox_City->currentText());
-    User.SetBirthDate_Year(ui->dateEdit_Birthdate->date().year());
-    User.SetBirthDate_Month(ui->dateEdit_Birthdate->date().month());
-    User.SetBirthDate_Day(ui->dateEdit_Birthdate->date().day());
+    if(! ui->lineEdit_EducationInfoMajor->text().isEmpty()){
+        if(! User.SetEducationInfoMajor( ui->lineEdit_EducationInfoMajor->text() )){
+            ui->label_MajorNotValid->show();
+            invalidity = true;
+        }
+    }
+    if(! ui->lineEdit_PrevEmploymentsEmploymentTipe->text().isEmpty()){
+        if(! User.SetPrevEmploymentEmploymentTipe(ui->lineEdit_PrevEmploymentsEmploymentTipe->text())){
+            ui->label_EmployTypeNotValid->show();
+            invalidity = true;
+        }
+    }
+    if(! ui->lineEdit_PrevEmploymentsCompanyName->text().isEmpty())
+        User.SetPrevEmploymentCompanyName( ui->lineEdit_PrevEmploymentsCompanyName->text() );
+    if(! ui->lineEdit_PrevEmploymentsCompanyName->text().isEmpty())
+        User.SetPrevEmploymentCompanyName(ui->lineEdit_PrevEmploymentsCompanyName->text());
+
+    if(! ui->lineEdit_EducationInfoGrade->text().isEmpty())
+        User.SetEducationInfoGrade( ui->lineEdit_EducationInfoGrade->text() );
+    if(! ui->lineEdit_EducationInfoSchoolName->text().isEmpty())
+        User.SetEducationInfoSchoolName( ui->lineEdit_EducationInfoSchoolName->text() );
+    User.SetAddressCountry(ui->comboBox_Country->currentText());
+    User.SetAddressProvince(ui->comboBox_Province->currentText());
+    User.SetAddressCity(ui->comboBox_City->currentText());
+    User.SetBirthDateYear(ui->dateEdit_Birthdate->date().year());
+    User.SetBirthDateMonth(ui->dateEdit_Birthdate->date().month());
+    User.SetBirthDateDay(ui->dateEdit_Birthdate->date().day());
+    User.SetEducationInfoEndYear( ui->spinBox_EducationInfoEndYear->value());
+    User.SetEducationInfoEndYear( ui->spinBox_EducationInfoStartYear->value());
+    User.SetPrevEmploymentStartYear(ui->spinBox_PrevEmploymentsStartYear->value());
+    User.SetPrevEmploymentEndYear(ui->spinBox_PrevEmploymentsEndYear->value());
+
     if(ui->radioButton_Over18->isChecked())
         User.SetOver18(true);
     else
         User.SetOver18(false);
+
+    if(ui->radioButton_IGraduated->isChecked())
+        User.SetEducationInfoFinished(true);
+    else
+        User.SetEducationInfoFinished(false);
 
 
 

@@ -10,7 +10,7 @@
 void SetupDatabase(QSqlDatabase database)
 {
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("d:\\Linked In\\LinkedIn.db");
+    database.setDatabaseName("D:\\Linked In\\LinkedIn\\LinkedIn.db");
     database.open();
 
 }

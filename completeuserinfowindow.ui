@@ -46,7 +46,7 @@ background-color: rgb(255, 255, 255);</string>
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -130,7 +130,7 @@ background-color: rgb(255, 255, 255);</string>
        <item>
         <widget class="QLabel" name="InvalidEmail">
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Emai you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Email you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -225,7 +225,15 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="dateEdit_Birthdate"/>
+        <widget class="QDateEdit" name="dateEdit_Birthdate">
+         <property name="date">
+          <date>
+           <year>2024</year>
+           <month>1</month>
+           <day>1</day>
+          </date>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_Over18">
@@ -275,7 +283,7 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <layout class="QFormLayout" name="formLayout_Education">
        <item row="2" column="1">
-        <widget class="QLineEdit" name="EducationInfo1Major">
+        <widget class="QLineEdit" name="lineEdit_EducationInfoMajor">
          <property name="sizeIncrement">
           <size>
            <width>90</width>
@@ -292,7 +300,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="QLineEdit" name="EducationInfo1SchoolName"/>
+        <widget class="QLineEdit" name="lineEdit_EducationInfoSchoolName"/>
        </item>
        <item row="6" column="1">
         <widget class="QLabel" name="label_5">
@@ -302,7 +310,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QLineEdit" name="EducationInfo1Grade"/>
+        <widget class="QLineEdit" name="lineEdit_EducationInfoGrade"/>
        </item>
        <item row="8" column="1">
         <widget class="QLabel" name="label_2">
@@ -312,7 +320,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="9" column="1">
-        <widget class="QSpinBox" name="EducationInfo1StartYear">
+        <widget class="QSpinBox" name="spinBox_EducationInfoStartYear">
          <property name="minimum">
           <number>1290</number>
          </property>
@@ -335,7 +343,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="11" column="1">
-        <widget class="QSpinBox" name="EducationInfo1EndYear">
+        <widget class="QSpinBox" name="spinBox_EducationInfoEndYear">
          <property name="minimum">
           <number>1290</number>
          </property>
@@ -348,7 +356,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="12" column="1">
-        <widget class="QRadioButton" name="Finished">
+        <widget class="QRadioButton" name="radioButton_IGraduated">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -376,42 +384,13 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLabel" name="MajorNotValid">
+        <widget class="QLabel" name="label_MajorNotValid">
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Major you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QPushButton" name="pushButton_AdEdu">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>31</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>+</string>
-      </property>
-      <property name="flat">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QScrollBar" name="verticalScrollBar">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>9</y>
-        <width>16</width>
-        <height>411</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
      </widget>
      <widget class="QLabel" name="Imlabel_2">
       <property name="geometry">
@@ -442,7 +421,7 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <layout class="QFormLayout" name="formLayout_PastPosition">
        <item row="2" column="1">
-        <widget class="QLineEdit" name="PrevEmploymets0CompanyName">
+        <widget class="QLineEdit" name="lineEdit_PrevEmploymentsCompanyName">
          <property name="sizeIncrement">
           <size>
            <width>90</width>
@@ -459,7 +438,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLineEdit" name="PrevEmploymets0Post"/>
+        <widget class="QLineEdit" name="lineEdit_PrevEmploymentsPost"/>
        </item>
        <item row="5" column="1">
         <widget class="QLabel" name="label_10">
@@ -469,7 +448,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="6" column="1">
-        <widget class="QLineEdit" name="PrevEmploymets0EmploymentTipe"/>
+        <widget class="QLineEdit" name="lineEdit_PrevEmploymentsEmploymentTipe"/>
        </item>
        <item row="8" column="1">
         <widget class="QLabel" name="label_11">
@@ -479,7 +458,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="9" column="1">
-        <widget class="QSpinBox" name="PrevEmploymets0StartYear">
+        <widget class="QSpinBox" name="spinBox_PrevEmploymentsStartYear">
          <property name="minimum">
           <number>1290</number>
          </property>
@@ -499,7 +478,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="11" column="1">
-        <widget class="QSpinBox" name="PrevEmploymets0EndYear">
+        <widget class="QSpinBox" name="spinBox_PrevEmploymentsEndYear">
          <property name="wrapping">
           <bool>false</bool>
          </property>
@@ -525,29 +504,13 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QLabel" name="EmployTypeNotValid">
+        <widget class="QLabel" name="label_EmployTypeNotValid">
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Employment's tipe you entered is not valid.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QPushButton" name="pushButton_AddPo">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>31</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>+</string>
-      </property>
-      <property name="flat">
-       <bool>false</bool>
-      </property>
      </widget>
      <widget class="QLabel" name="Imlabel_3">
       <property name="geometry">

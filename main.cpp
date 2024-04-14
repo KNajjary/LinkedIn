@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
         ww.show();
 
 
-    CompleteUserInfoWindow cw;
-        cw.show();
+    //CompleteUserInfoWindow cw;
+        //cw.show();
 
     /*VerificationWindow vw;
         vw.show();
