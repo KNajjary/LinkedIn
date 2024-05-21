@@ -10,18 +10,32 @@ CONFIG += c++17
 
 SOURCES += \
     completeuserinfowindow.cpp \
+    content.cpp \
+    conversation.cpp \
     functions.cpp \
     LogAndSignInWindow.cpp \
     main.cpp \
     WelcomeWindow.cpp \
+    message.cpp \
+    mydatabase.cpp \
+    newpost.cpp \
+    post.cpp \
+    postui.cpp \
     user.cpp \
     verificationwindow.cpp
 
 HEADERS += \
     WelcomeWindow.h \
     completeuserinfowindow.h \
+    content.h \
+    conversation.h \
     functions.h \
     LogAndSignInWindow.h \
+    message.h \
+    mydatabase.h \
+    newpost.h \
+    post.h \
+    postui.h \
     structs.h \
     user.h \
     verificationwindow.h
@@ -30,6 +44,10 @@ FORMS += \
     WelcomeWindow.ui \
     LogAndSignInWindow.ui \
     completeuserinfowindow.ui \
+    conversation.ui \
+    message.ui \
+    newpost.ui \
+    postui.ui \
     verificationwindow.ui
 
 # Default rules for deployment.

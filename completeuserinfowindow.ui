@@ -46,7 +46,7 @@ background-color: rgb(255, 255, 255);</string>
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -233,6 +233,68 @@ background-color: rgb(255, 255, 255);</string>
            <day>1</day>
           </date>
          </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>Career</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <item>
+          <property name="text">
+           <string>front_end developer</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>back_end developer</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>teacher</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>researcher</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>architect</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>nurs</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>doctor</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>dentist</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>painter</string>
+          </property>
+         </item>
         </widget>
        </item>
        <item>

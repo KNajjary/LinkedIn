@@ -2,17 +2,21 @@
 #include "WelcomeWindow.h"
 #include "completeuserinfowindow.h"
 #include <QApplication>
-
+#include "mydatabase.h"
+#include "newpost.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //Welcome Window
-
-     WelcomeWindow ww;
+/*
+    WelcomeWindow ww;
     //ww.setStyleSheet("background-color:yellow;");
     ww.setAutoFillBackground(true);
-    //while (true){
-        ww.show();
+    ww.show();*/
+    //NewPost con;
+    //con.show();
+    //MyDatabase d;
+    //d.CreatePostsTable();
+    //d.CreatePostsTable("Ali");
 
 
     //CompleteUserInfoWindow cw;
