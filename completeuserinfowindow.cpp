@@ -1,4 +1,5 @@
 #include "completeuserinfowindow.h"
+#include "completecompanyinfo.h"
 #include "ui_completeuserinfowindow.h"
 
 #include <QDebug>
@@ -173,4 +174,16 @@ void CompleteUserInfoWindow::on_pushButton_AddPo_clicked()
 {
 
 }*/
+
+
+
+
+
+void CompleteUserInfoWindow::on_pushButton_AreYouCompany_clicked()
+{
+    CompleteCompanyInfo * c =new CompleteCompanyInfo(LogAndSignInWindow::Username);
+    c->show();
+    this->close();
+    ui->~CompleteUserInfoWindow();
+}
 

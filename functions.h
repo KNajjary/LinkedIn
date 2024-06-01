@@ -11,5 +11,5 @@ void SetupDatabase(QSqlDatabase);
 void CloseDatabase(QSqlDatabase);
 bool IsMadeOfLetters(QString );
 bool IsMadeOfNumbers(QString );
-
+bool IsEmailValid(QString);
 #endif // FUNCTIONS_H

@@ -23,3 +23,30 @@ void Content::SetTimeSent()
 {
     TimeSent=QDateTime::currentDateTime();
 }
+QString Content::GetID()
+{
+    return ID;
+}
+/*Content::Content()
+{
+   //username
+   TimeSent=QDateTime::currentDateTime();
+   //ID
+
+}*/
+void Content::SetSenderUsername(QString u)
+{
+    SenderUsername=u;
+}
+QString Content::GetSenderUsername()
+{
+    return SenderUsername;
+}
+void Content::SetTableName(QString t)
+{
+    TableName = t;
+}
+QString Content::GetTableName()
+{
+    return TableName;
+}

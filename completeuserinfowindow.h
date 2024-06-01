@@ -28,6 +28,10 @@ private slots:
 
     //void on_pushButton_AddPo_clicked();
 
+
+
+    void on_pushButton_AreYouCompany_clicked();
+
 private:
     Ui::CompleteUserInfoWindow *ui;
     //User * User;

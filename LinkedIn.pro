@@ -9,6 +9,10 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addcomment.cpp \
+    comment.cpp \
+    company.cpp \
+    completecompanyinfo.cpp \
     completeuserinfowindow.cpp \
     content.cpp \
     conversation.cpp \
@@ -16,9 +20,12 @@ SOURCES += \
     LogAndSignInWindow.cpp \
     main.cpp \
     WelcomeWindow.cpp \
+    me.cpp \
+    member.cpp \
     message.cpp \
     mydatabase.cpp \
     newpost.cpp \
+    person.cpp \
     post.cpp \
     postui.cpp \
     user.cpp \
@@ -26,14 +33,21 @@ SOURCES += \
 
 HEADERS += \
     WelcomeWindow.h \
+    addcomment.h \
+    comment.h \
+    company.h \
+    completecompanyinfo.h \
     completeuserinfowindow.h \
     content.h \
     conversation.h \
     functions.h \
     LogAndSignInWindow.h \
+    me.h \
+    member.h \
     message.h \
     mydatabase.h \
     newpost.h \
+    person.h \
     post.h \
     postui.h \
     structs.h \
@@ -43,8 +57,12 @@ HEADERS += \
 FORMS += \
     WelcomeWindow.ui \
     LogAndSignInWindow.ui \
+    addcomment.ui \
+    comment.ui \
+    completecompanyinfo.ui \
     completeuserinfowindow.ui \
     conversation.ui \
+    me.ui \
     message.ui \
     newpost.ui \
     postui.ui \

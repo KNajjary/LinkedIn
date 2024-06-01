@@ -51,3 +51,15 @@ bool IsMadeOfNumbers(QString s){
     if(!a[i])return true;
     else return false;
 }
+bool IsEmailValid(QString s)
+{
+    std::string a=s.toStdString();
+    unsigned int i;
+    bool DotFound =false,AtsFound =false;//.  @
+    for(i=0;a[i] ;i++){
+        if(a[i]== '@')AtsFound=true;
+        if(a[i]=='.')DotFound=true;
+    }
+    if( DotFound && AtsFound)return true;
+    else return false;
+}

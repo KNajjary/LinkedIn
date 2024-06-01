@@ -7,27 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>615</width>
-    <height>318</height>
+    <height>206</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTextBrowser" name="textBrowser">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_Connect">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>80</y>
-     <width>521</width>
-     <height>91</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>30</y>
+     <x>520</x>
+     <y>10</y>
      <width>80</width>
      <height>27</height>
     </rect>
@@ -36,38 +29,25 @@
     <string>Connect</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>30</y>
-     <width>80</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>See more</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>190</y>
-     <width>141</width>
+     <x>20</x>
+     <y>140</y>
+     <width>91</width>
      <height>54</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="pushButton_Share">
       <property name="text">
        <string>Share</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_ShareC">
       <property name="text">
        <string>TextLabel</string>
       </property>
@@ -78,22 +58,22 @@
   <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>190</y>
-     <width>141</width>
-     <height>61</height>
+     <x>120</x>
+     <y>140</y>
+     <width>111</width>
+     <height>51</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="pushButton_Repost">
       <property name="text">
        <string>Repost</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="label_RepostC">
       <property name="text">
        <string>TextLabel</string>
       </property>
@@ -105,21 +85,21 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>180</y>
-     <width>141</width>
-     <height>61</height>
+     <y>140</y>
+     <width>131</width>
+     <height>51</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="pushButton_Comment">
       <property name="text">
        <string>Comment</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label_CommentC">
       <property name="text">
        <string>TextLabel</string>
       </property>
@@ -130,35 +110,89 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>10</y>
+     <x>240</x>
+     <y>140</y>
      <width>211</width>
-     <height>61</height>
+     <height>51</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
     <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="pushButton_WhoLiked">
       <property name="text">
        <string>Who liked this</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="pushButton_Like">
       <property name="text">
        <string>Like</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="label_LikeC">
       <property name="text">
        <string>TextLabel</string>
       </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>571</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label_Picture">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>picture</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextBrowser" name="textBrowser_Text"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Follow">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>10</y>
+     <width>80</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Follow</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SeeMore">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>10</y>
+     <width>80</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>See more</string>
+   </property>
   </widget>
  </widget>
  <resources/>
