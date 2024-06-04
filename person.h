@@ -5,8 +5,10 @@
 #include <QString>
 class Person : public Member
 {
+    QString Skills;
 public:
     Person(QString);
+    QString GetSkills()const;
 };
 
 #endif // PERSON_H

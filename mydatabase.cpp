@@ -14,12 +14,12 @@ MyDatabase::~MyDatabase()
 {
     database.close();
 }
-bool MyDatabase::Update(QString t, QString Username, QString f, QString  v)
+bool MyDatabase::Update(QString t, QString c, QString Username, QString f, QString  v)
 {
     bool result=false;
 
     QSqlQuery qr;
-    if (qr.prepare("UPDATE "+t+" SET "+ f +  " = ? WHERE Username = ? ;"))
+    if (qr.prepare("UPDATE "+t+" SET "+ f +  " = ? WHERE "+c+" = ? ;"))
     {
         qr.addBindValue(v);
         qr.addBindValue(Username);
@@ -31,7 +31,8 @@ bool MyDatabase::Update(QString t, QString Username, QString f, QString  v)
 
     return result;
 }
-bool MyDatabase::Update(QString t,QString column,int value,QString f,int  v){
+bool MyDatabase::Update(QString t,QString column,int value,QString f,int  v)
+{
     bool result=false;
 
     QSqlQuery qr;
@@ -46,14 +47,15 @@ bool MyDatabase::Update(QString t,QString column,int value,QString f,int  v){
     else qDebug()<< "Query execution failed: " << qr.lastError().text();
     return result;
 }
-bool MyDatabase::Update(QString t,QString Username,QString f, bool v){
+bool MyDatabase::Update(QString t,QString c,QString Username,QString f, bool v)
+{
     bool result=false;
     unsigned int n;
     if(v)n=1;
     else n=0;
 
     QSqlQuery qr;
-    if (qr.prepare("UPDATE "+t+" SET "+ f + " = ? WHERE Username = ? ;"))
+    if (qr.prepare("UPDATE "+t+" SET "+ f + " = ? WHERE "+c+" = ? ;"))
     {
         qr.addBindValue(n);
         qr.addBindValue(Username);
@@ -186,4 +188,22 @@ bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QStr
 
     return true;
 
+}
+QString MyDatabase::SelectMax(QString table, QString max)
+{
+    QSqlQuery qr;
+    if( ! qr.prepare("SELECT MAX("+max +") FROM "+table+" ;"))
+    {
+        qDebug()<<"error1 "<<qr.lastError().text();
+        return "";
+    }
+    //qr.addBindValue(max);
+    if(! qr.exec())
+    {
+        qDebug()<<"error2 "<<qr.lastError().text();
+        return "";
+    }
+    qr.next();
+
+    return qr.value(0).toString();
 }

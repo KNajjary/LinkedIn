@@ -1,5 +1,6 @@
 #include "completeuserinfowindow.h"
 #include "completecompanyinfo.h"
+#include "mydatabase.h"
 #include "ui_completeuserinfowindow.h"
 
 #include <QDebug>
@@ -8,12 +9,13 @@
 #include "user.h"
 //#include "verificationwindow.h"
 #include "LogAndSignInWindow.h"
-CompleteUserInfoWindow::CompleteUserInfoWindow(QWidget *parent)
+CompleteUserInfoWindow::CompleteUserInfoWindow(QString u,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::CompleteUserInfoWindow)
 {
     ui->setupUi(this);
     //user = NULL;
+    Username=u;
     ui->label_EmployTypeNotValid->hide();
     ui->InValidFirstNam->hide();
     ui->InvalidLastNam->hide();
@@ -64,8 +66,8 @@ void CompleteUserInfoWindow::on_pushButton_Done_clicked()
 
     bool invalidity= false;
     qDebug() << "Enter on_pushButton_Done_clicked";
-    User User(LogAndSignInWindow::Username ,LogAndSignInWindow:: Password);
-    qDebug()<< LogAndSignInWindow::Username << LogAndSignInWindow::Password;
+    User User(Username ,LogAndSignInWindow:: Password);
+    qDebug()<< Username << LogAndSignInWindow::Password;
     if(! ui->lineEdit_FirstName->text().isEmpty())
     {
         if(! User.SetFirstName(ui->lineEdit_FirstName->text())){
@@ -143,6 +145,10 @@ void CompleteUserInfoWindow::on_pushButton_Done_clicked()
     else
         User.SetEducationInfoFinished(false);
 
+    MyDatabase db;
+    db.Update("Users","Username", Username ,"IsCompany", false );
+    db.Update("Users","Username", Username ,"Skills", ui->textBrowser_Skills->toPlainText());
+
 
 
 
@@ -186,4 +192,6 @@ void CompleteUserInfoWindow::on_pushButton_AreYouCompany_clicked()
     this->close();
     ui->~CompleteUserInfoWindow();
 }
-
+void CompleteUserInfoWindow::Hide_pushButton_AreYouCompany(){
+    ui->pushButton_AreYouCompany->hide();
+}

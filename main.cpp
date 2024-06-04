@@ -7,6 +7,7 @@
 #include "mydatabase.h"
 #include "newpost.h"
 #include "me.h"
+#include "viewprofile.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
     //NewPost con;
     //con.show();
     //MyDatabase d;
+    //qDebug()<< d.SelectMax("Ali_Posts","RowNumber");
     //d.CreatePostsTable();
     //d.CreatePostsTable("Ali");
     //CompleteCompanyInfo w("fg");
@@ -25,8 +27,10 @@ int main(int argc, char *argv[])
     //Post p("Ali","Hi!!!!!!","tgfhxpicture",1);
     //AddComment * c=new AddComment("Ali/Posts","Ali",1);
     //c->show();
-    Me * me=new Me("fg");
-    me->show();
+    //Me * me=new Me("fg");
+    //me->show();
+    ViewProfile vp("Ali");
+    vp.show();
 
     /*CompleteUserInfoWindow cw;
     cw.show();*/

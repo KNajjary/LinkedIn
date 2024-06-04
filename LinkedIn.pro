@@ -29,7 +29,8 @@ SOURCES += \
     post.cpp \
     postui.cpp \
     user.cpp \
-    verificationwindow.cpp
+    verificationwindow.cpp \
+    viewprofile.cpp
 
 HEADERS += \
     WelcomeWindow.h \
@@ -52,7 +53,8 @@ HEADERS += \
     postui.h \
     structs.h \
     user.h \
-    verificationwindow.h
+    verificationwindow.h \
+    viewprofile.h
 
 FORMS += \
     WelcomeWindow.ui \
@@ -66,7 +68,8 @@ FORMS += \
     message.ui \
     newpost.ui \
     postui.ui \
-    verificationwindow.ui
+    verificationwindow.ui \
+    viewprofile.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

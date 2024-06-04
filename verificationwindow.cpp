@@ -71,7 +71,7 @@ void VerificationWindow::on_pushButton_SignIn_clicked()
         //Username = LogAndSignInWindow::Username;
         //Password = LogAndSignInWindow::Password;
 
-        CompleteUserInfoWindow* w = new CompleteUserInfoWindow;
+        CompleteUserInfoWindow* w = new CompleteUserInfoWindow(LogAndSignInWindow::Username);
         //w->SetUser(&User);
         w->show();
         //

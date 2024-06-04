@@ -62,17 +62,17 @@ void CompleteCompanyInfo::on_pushButton_Done_clicked()
         }
     }
     MyDatabase db;
-    db.Update("Users", Username ,"FirstName", ui->lineEdit_FirstName->text());
-    db.Update("Users", Username ,"LastName", ui->lineEdit_LastName->text());
-    db.Update("Users", Username ,"Email", ui->lineEdit_Email->text());
-    db.Update("Users", Username ,"Phone", ui->lineEdit_PhoneNumber->text());
-    db.Update("Users", Username ,"AddressCity", ui->comboBox_City->currentText());
-    db.Update("Users", Username ,"AddressProvince", ui->comboBox_Province->currentText());
-    db.Update("Users", Username ,"AddressCountry", ui->comboBox_Country->currentText());
-    db.Update("Users", Username ,"Career", ui->comboBox_career->currentText());
-    db.Update("Users", Username ,"CompanyStartYear", ui->spinBox_PrevEmploymentsStartYear->text());
-    db.Update("Users", Username ,"CompanyName", ui->lineEdit_PrevEmploymentsCompanyName->text());
-    db.Update("Users", Username ,"IsCompany", true );
+    db.Update("Users","Username", Username ,"FirstName", ui->lineEdit_FirstName->text());
+    db.Update("Users","Username", Username ,"LastName", ui->lineEdit_LastName->text());
+    db.Update("Users","Username", Username ,"Email", ui->lineEdit_Email->text());
+    db.Update("Users","Username", Username ,"Phone", ui->lineEdit_PhoneNumber->text());
+    db.Update("Users","Username", Username ,"AddressCity", ui->comboBox_City->currentText());
+    db.Update("Users","Username", Username ,"AddressProvince", ui->comboBox_Province->currentText());
+    db.Update("Users","Username", Username ,"AddressCountry", ui->comboBox_Country->currentText());
+    db.Update("Users","Username", Username ,"Career", ui->comboBox_career->currentText());
+    db.Update("Users","Username", Username ,"CompanyStartYear", ui->spinBox_PrevEmploymentsStartYear->text());
+    db.Update("Users","Username", Username ,"CompanyName", ui->lineEdit_PrevEmploymentsCompanyName->text());
+    db.Update("Users","Username", Username ,"IsCompany", true );
 
 
 

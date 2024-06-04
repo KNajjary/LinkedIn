@@ -1,6 +1,7 @@
 #include "member.h"
 #include "mydatabase.h"
 Member::Member(QString u)
+    :PostsTable(u+"_Posts")
 {
     Username=u;
     MyDatabase db;
@@ -12,12 +13,14 @@ Member::Member(QString u)
     Address.City=db.SelectWhere(TableName,"Username",Username,"AddressCity",1);
     Address.Country= db.SelectWhere(TableName,"Username",Username,"AddressCountry",1);
     Address.Province= db.SelectWhere(TableName,"Username",Username,"AddressProvince",1);
-    Picture=db.SelectWhere(TableName,"Username",Username,"Picture",1);\
+    Picture=db.SelectWhere(TableName,"Username",Username,"Picture",1);
+    PostsCount = db.SelectMax(PostsTable,"RowNumber").toInt();
 
 
 }
 Member::Member(Member const  &m)
     :TableName(m.TableName)
+    ,PostsTable(m.PostsTable)
 {
 
     Email=m.Email;
@@ -29,6 +32,8 @@ Member::Member(Member const  &m)
     Career=m.Career;
     Address=m.Address;
     Picture=m.Picture;
+    PostsCount =m.PostsCount;
+
 }
 QString Member::GetEmail()const
 {
@@ -62,4 +67,22 @@ QString  Member::GetPicture()const
 {
     return Picture;
 }
+bool Member::SetPicture(QString p)
+{
+    Picture=p;
+    MyDatabase db;
+    return db.Update(TableName,"Username",Username,"Picture",p);
 
+}
+QString Member::GetTableName()const
+{
+    return TableName;
+}
+QString Member::GetPostsTable() const
+{
+    return PostsTable;
+}
+unsigned int Member::GetPostsCount() const
+{
+    return PostsCount;
+}

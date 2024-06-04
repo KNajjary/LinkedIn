@@ -14,7 +14,9 @@ class Member
         Career,
         Picture;
     Address Address;
+    unsigned int PostsCount;
     const QString TableName="Users";
+    const QString PostsTable;
 public:
     Member(QString);
     Member(Member const &);
@@ -26,6 +28,10 @@ public:
     QString GetFirstName()const;
     QString GetCareer() const;
     QString GetPicture()const;
+    QString GetTableName()const;
+    QString GetPostsTable() const;
+    unsigned int GetPostsCount() const;
+    bool SetPicture(QString);
     //void Get();
 };
 

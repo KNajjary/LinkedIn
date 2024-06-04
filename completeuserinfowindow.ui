@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>830</width>
-    <height>772</height>
+    <height>872</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,9 +24,9 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>10</y>
+      <y>0</y>
       <width>661</width>
-      <height>721</height>
+      <height>811</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -67,7 +67,7 @@ background-color: rgb(255, 255, 255);</string>
         <x>360</x>
         <y>10</y>
         <width>281</width>
-        <height>667</height>
+        <height>757</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -295,6 +295,26 @@ background-color: rgb(255, 255, 255);</string>
            <string>painter</string>
           </property>
          </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_Skills">
+         <property name="text">
+          <string>Skills</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="textBrowser_Skills">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>60</height>
+          </size>
+         </property>
         </widget>
        </item>
        <item>

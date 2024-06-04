@@ -14,10 +14,11 @@ class CompleteUserInfoWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit CompleteUserInfoWindow( QWidget *parent = nullptr);
+    explicit CompleteUserInfoWindow(QString , QWidget *parent = nullptr);
     ~CompleteUserInfoWindow();
     //void SetUser(User *);
     //const User*  GetUser(void);
+    void Hide_pushButton_AreYouCompany();
 
 private slots:
     void on_pushButton_Done_clicked();
@@ -33,6 +34,7 @@ private slots:
     void on_pushButton_AreYouCompany_clicked();
 
 private:
+    QString Username;
     Ui::CompleteUserInfoWindow *ui;
     //User * User;
 };

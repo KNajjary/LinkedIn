@@ -16,6 +16,13 @@ public:
     explicit Me(QString , QWidget *parent = nullptr);
     ~Me();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_EditProfile_clicked();
+
+    void on_pushButton_AreYouCompany_clicked();
+
 private:
     Member * member;
     void ShowAreYouCompanyBut();
