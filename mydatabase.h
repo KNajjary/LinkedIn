@@ -5,6 +5,8 @@
 #include "QSqlDriver"
 #include "QSqlQuery"
 #include "QSqlQueryModel"
+#include "job.h"
+
 //----------------------------------------------------------------
 class MyDatabase
 {
@@ -19,6 +21,9 @@ public:
     //
     bool InsertComment(QString,QString,QString,QString,QString);
     bool InsertPost(QString , QString,QString,QString);
+    bool InsertJob(QString TableName,QString  Name,QString Company,QString WorkplaceType,QString Location,QString Time,QString SkillsRequired,QString Salary,QString TimeCreated,QString f);
+    bool InsertJob(Job);
+    bool InsertApply(QString,QString,QString);
     //
     QString SelectWhere(QString , QString ,QString ,QString  ,unsigned int);//table / where=value/ find nth field
     QString SelectWhere(QString , QString ,int ,QString  ,unsigned int);//table / where=value/ find nth field
@@ -27,6 +32,8 @@ public:
     void CreatePostsTable(QString);
     void CreateLikeTable(QString);
     void CreateCommentTable(QString);
+    void CreateJobsTable(QString);
+    void CreateJobApplyTable(QString);
     //bool CreateMessagesTable();
 };
 //----------------------------------------------------------

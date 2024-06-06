@@ -16,7 +16,7 @@ struct Education{
     unsigned int  StartYear,
         EndYear;
 };
-struct Job{
+struct job{
     QString
         CompanyName,
         Post,

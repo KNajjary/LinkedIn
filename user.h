@@ -25,7 +25,7 @@ class User
     //unsigned int NumOfDegrees;
     Date BirthDate;
     Education EducationInfo;
-    Job PrevEmploymet;
+    job PrevEmploymet;
 //protected:
     bool SetFirstNameInDB(QString);
     bool SetLastNameInDB(QString);

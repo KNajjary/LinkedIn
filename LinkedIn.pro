@@ -18,18 +18,22 @@ SOURCES += \
     conversation.cpp \
     functions.cpp \
     LogAndSignInWindow.cpp \
+    job.cpp \
+    jobui.cpp \
     main.cpp \
     WelcomeWindow.cpp \
     me.cpp \
     member.cpp \
     message.cpp \
     mydatabase.cpp \
+    newjob.cpp \
     newpost.cpp \
     person.cpp \
     post.cpp \
     postui.cpp \
     user.cpp \
     verificationwindow.cpp \
+    viewjobs_person.cpp \
     viewprofile.cpp
 
 HEADERS += \
@@ -43,10 +47,13 @@ HEADERS += \
     conversation.h \
     functions.h \
     LogAndSignInWindow.h \
+    job.h \
+    jobui.h \
     me.h \
     member.h \
     message.h \
     mydatabase.h \
+    newjob.h \
     newpost.h \
     person.h \
     post.h \
@@ -54,6 +61,7 @@ HEADERS += \
     structs.h \
     user.h \
     verificationwindow.h \
+    viewjobs_person.h \
     viewprofile.h
 
 FORMS += \
@@ -64,11 +72,14 @@ FORMS += \
     completecompanyinfo.ui \
     completeuserinfowindow.ui \
     conversation.ui \
+    jobui.ui \
     me.ui \
     message.ui \
+    newjob.ui \
     newpost.ui \
     postui.ui \
     verificationwindow.ui \
+    viewjobs_person.ui \
     viewprofile.ui
 
 # Default rules for deployment.

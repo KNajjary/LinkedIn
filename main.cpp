@@ -4,7 +4,9 @@
 #include "completecompanyinfo.h"
 #include "completeuserinfowindow.h"
 #include <QApplication>
+#include "jobui.h"
 #include "mydatabase.h"
+#include "newjob.h"
 #include "newpost.h"
 #include "me.h"
 #include "viewprofile.h"
@@ -29,9 +31,12 @@ int main(int argc, char *argv[])
     //c->show();
     //Me * me=new Me("fg");
     //me->show();
-    ViewProfile vp("Ali");
-    vp.show();
-
+    //ViewProfile vp("Ali");
+    //vp.show();
+    //NewJob nj("Ali");
+    //nj.show();
+    JobUi jui("Ali",6,"kosar");
+    jui.show();
     /*CompleteUserInfoWindow cw;
     cw.show();*/
 

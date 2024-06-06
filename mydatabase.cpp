@@ -111,14 +111,15 @@ void MyDatabase::CreateLikeTable(QString name)
 QString MyDatabase::SelectWhere(QString t, QString where,QString value,QString field ,unsigned int nth)//starting from 1
 {
     QSqlQuery qr;
-    qr.exec("SELECT "+field+" FROM "+t+" WHERE "+where+" ='"+value+"' ;");
+    qr.exec("SELECT "+field+" FROM "+t+"  WHERE  "+where+" = '"+value+"' ;");
     qr.seek(nth-1);
+    qDebug()<< qr.lastError().text();
     return qr.value(0).toString();
 }
 QString MyDatabase::SelectWhere(QString t, QString where,int value,QString field ,unsigned int nth)//starting from 1
 {
     QSqlQuery qr;
-    qr.prepare("SELECT "+field+" FROM "+t+" WHERE "+where+" = ? ;");
+    qr.prepare("SELECT "+field+" FROM "+t+"  WHERE  "+where+" = ? ;");
     qr.addBindValue(value);
     qr.exec();
     qDebug()<< qr.lastError().text();
@@ -134,7 +135,7 @@ QString MyDatabase::Select(QString t,QString field ,unsigned int nth)//starting 
 }
 bool MyDatabase::InsertComment(QString TableName,QString Username,QString Text,QString Picture,QString Time)
 {
-    MyDatabase db;
+    //MyDatabase db;
     QSqlQuery qr;
     qr.prepare("INSERT INTO "+TableName+" ("
                                             "CommentUsername , "
@@ -157,7 +158,7 @@ bool MyDatabase::InsertComment(QString TableName,QString Username,QString Text,Q
 }
 bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QString TimeSent)
 {
-    MyDatabase db;
+    //MyDatabase db;
     QSqlQuery qr;
     if(! qr.prepare("INSERT INTO "+TableName+" ("
                                             "TimeSent , "
@@ -191,6 +192,7 @@ bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QStr
 }
 QString MyDatabase::SelectMax(QString table, QString max)
 {
+    //MyDatabase db;
     QSqlQuery qr;
     if( ! qr.prepare("SELECT MAX("+max +") FROM "+table+" ;"))
     {
@@ -206,4 +208,151 @@ QString MyDatabase::SelectMax(QString table, QString max)
     qr.next();
 
     return qr.value(0).toString();
+}
+void MyDatabase::CreateJobsTable(QString table)
+{
+    //MyDatabase db;
+    QSqlQuery qr;
+    qr.prepare(
+        "CREATE TABLE IF NOT EXISTS "+table+" ("
+                                                "Name	TEXT,"
+                                                "Company	TEXT,"
+                                                "WorkplaceType	TEXT,"
+                                                "Location	TEXT,"
+                                                "Time	TEXT,"
+                                                "SkillsRequired	TEXT,"
+                                                "Salary	TEXT,"
+                                                "Number	INTEGER,"
+                                                "IsClosed	INTEGER,"
+                                                "TimeCreated	TEXT NOT NULL,"
+                                                "Field	TEXT,"
+                                                "PRIMARY KEY( Number AUTOINCREMENT)"
+                                                ");"
+        );
+    if(! qr.exec()){
+        qDebug()<<qr.lastError().text();
+
+    }
+    return;
+}
+bool MyDatabase::InsertJob(QString TableName,QString  Name,QString Company,QString WorkplaceType,QString Location,QString Time,QString SkillsRequired,QString Salary,QString TimeCreated,QString f)
+{
+    //MyDatabase db;
+    QSqlQuery qr;
+    if(! qr.prepare("INSERT INTO "+TableName+" ("
+                                                "Name ,"
+                                                 "Company ,"
+                                                 "WorkplaceType	,"
+                                                 "Location	,"
+                                                 "Time	,"
+                                                 "SkillsRequired	,"
+                                                 "Salary	,"
+                                                 "IsClosed	,"
+                                                 "TimeCreated ,"
+                                                 "Field )"
+                                                 "VALUES (?,?,?,?,?,?,?,?,?,?);"
+
+
+                    )){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+
+    qr.addBindValue(Name);
+    qr.addBindValue(Company);
+    qr.addBindValue(WorkplaceType);
+    qr.addBindValue(Location);
+    qr.addBindValue(Time);
+    qr.addBindValue(SkillsRequired);
+    qr.addBindValue(Salary);
+    qr.addBindValue(0);
+    qr.addBindValue(TimeCreated);
+    qr.addBindValue(f);
+
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+    return true;
+
+
+}
+void MyDatabase::CreateJobApplyTable(QString table)
+{
+    //MyDatabase db;
+    QSqlQuery qr;
+    qr.prepare(
+        "CREATE TABLE IF NOT EXISTS "+table+" ( "
+                                                "Username	TEXT NOT NULL,"
+                                                "Status	INTEGER "
+                                                ");"
+
+        );
+    if(! qr.exec())
+        qDebug()<<qr.lastError().text();
+    return;
+}
+bool MyDatabase::InsertJob(Job j)
+{
+    //MyDatabase db;
+    QSqlQuery qr;
+    if(! qr.prepare("INSERT INTO "+j.GetTableName()+" ("
+                                                 "Name ,"
+                                                 "Company ,"
+                                                 "WorkplaceType	,"
+                                                 "Location	,"
+                                                 "Time	,"
+                                                 "SkillsRequired	,"
+                                                 "Salary	,"
+                                                 "IsClosed	,"
+                                                 "TimeCreated ,"
+                                                 "Field )"
+                                                 "VALUES (?,?,?,?,?,?,?,?,?,?);"
+
+
+                    )){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+
+    qr.addBindValue(j.GetName());
+    qr.addBindValue(j.GetCompany());
+    qr.addBindValue(j.GetWorkplaceType());
+    qr.addBindValue(j.GetLocation());
+    qr.addBindValue(j.GetTime());
+    qr.addBindValue(j.GetSkillsRequired());
+    qr.addBindValue(j.GetSalary());
+    qr.addBindValue(0);
+    qr.addBindValue(j.GetTimeCreated());
+    qr.addBindValue(j.GetField());
+
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+    return true;
+
+}
+bool MyDatabase::InsertApply(QString table,QString username,QString status)
+{
+    QSqlQuery qr;
+    if(! qr.prepare("INSERT INTO "+table+" ("
+                                            "Username ,"
+                                            "Status "
+                                            " )"
+                                            "VALUES (?,?);"
+                    )){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+
+    qr.addBindValue(username);
+    qr.addBindValue(status);
+
+
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+    return true;
 }
