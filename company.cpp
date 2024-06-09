@@ -7,6 +7,7 @@ Company::Company(QString u)
     MyDatabase db;
     CompanyName = db.SelectWhere("Users","Username",GetUsername(),"CompanyName",1);
     StartYear = db.SelectWhere("Users","Username",GetUsername(),"CompanyStartYear",1);
+    FollowersTable=GetUsername()+"_Followers";
 
 }
 QString Company::GetCompanyName() const
@@ -16,4 +17,13 @@ QString Company::GetCompanyName() const
 QString Company::GetStartYear() const
 {
     return StartYear;
+}
+QString Company::GetFollowersTable() const
+{
+    return FollowersTable;
+}
+QString Company::GetFollower(unsigned int n) const
+{
+     MyDatabase db;
+    return db.Select(FollowersTable,"Username",n);
 }

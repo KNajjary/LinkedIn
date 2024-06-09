@@ -28,6 +28,7 @@ bool MyDatabase::Update(QString t, QString c, QString Username, QString f, QStri
         else qDebug()<< "Query execution failed: " << qr.lastError().text();
     }
     else qDebug()<< "Query execution failed: " << qr.lastError().text();
+    qDebug()<<"#######string######"<< qr.lastError().text();
 
     return result;
 }
@@ -45,7 +46,9 @@ bool MyDatabase::Update(QString t,QString column,int value,QString f,int  v)
         else qDebug()<< "Query execution failed: " << qr.lastError().text();
     }
     else qDebug()<< "Query execution failed: " << qr.lastError().text();
+    qDebug()<<"#######num######"<< qr.lastError().text();
     return result;
+
 }
 bool MyDatabase::Update(QString t,QString c,QString Username,QString f, bool v)
 {
@@ -64,7 +67,7 @@ bool MyDatabase::Update(QString t,QString c,QString Username,QString f, bool v)
         else qDebug()<< "Query execution failed: " << qr.lastError().text();
     }
     else qDebug()<< "Query execution failed: " << qr.lastError().text();
-
+     qDebug()<<"#######bool######"<< qr.lastError().text();
     return result;
 }
 void MyDatabase::CreatePostsTable(QString name){
@@ -131,6 +134,7 @@ QString MyDatabase::Select(QString t,QString field ,unsigned int nth)//starting 
     QSqlQuery qr;
     qr.exec("SELECT "+field+" FROM "+t+" ;");
     qr.seek(nth-1);
+
     return qr.value(0).toString();
 }
 bool MyDatabase::InsertComment(QString TableName,QString Username,QString Text,QString Picture,QString Time)
@@ -284,7 +288,7 @@ void MyDatabase::CreateJobApplyTable(QString table)
     qr.prepare(
         "CREATE TABLE IF NOT EXISTS "+table+" ( "
                                                 "Username	TEXT NOT NULL,"
-                                                "Status	INTEGER "
+                                                "Status	TEXT "
                                                 ");"
 
         );
@@ -355,4 +359,135 @@ bool MyDatabase::InsertApply(QString table,QString username,QString status)
         return false;
     }
     return true;
+}
+bool MyDatabase::InsertInJobs(QString u,unsigned int num)
+{
+    QSqlQuery qr;
+    if(! qr.prepare("INSERT INTO Jobs ("
+                                             " Username ,"
+                                             " Number "
+                                             " )"
+                                             "VALUES (?,?);"
+                    )){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+
+    qr.addBindValue(u);
+    qr.addBindValue(num);
+
+
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+    return true;
+}
+unsigned int MyDatabase::GetNumberOfRows(QString t)
+{
+    QSqlQuery qr;
+    int row_count = 0;
+
+    qr.exec("SELECT COUNT(*) FROM "+t+" ;");
+    qDebug()<<qr.lastError();
+
+    if(qr.first())
+        row_count = qr.value(0).toInt();
+    qDebug()<<qr.lastError();
+    return row_count;
+
+}
+void MyDatabase::CreateConnectionsTable(QString t)
+{
+    QSqlQuery qr;
+    if ( !qr.prepare("CREATE TABLE IF NOT EXISTS "+t+" ("
+                                                        "Username	TEXT NOT NULL,"
+                                                        "Status	TEXT"
+                                                        ");")
+        )
+    {
+        qDebug()<<qr.lastError();
+        return;
+    }
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+    }
+    return;
+}
+void MyDatabase::CreateConnectingTable(QString t)
+{
+    QSqlQuery qr;
+    if ( !qr.prepare("CREATE TABLE IF NOT EXISTS "+t+" ("
+                                                        "Username	TEXT NOT NULL"
+                                                        ");")
+        )
+    {
+        qDebug()<<qr.lastError();
+        return;
+    }
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+    }
+    return;
+}
+void MyDatabase::CreateFollowers_Following_Table(QString t)
+{
+    QSqlQuery qr;
+    if ( !qr.prepare("CREATE TABLE IF NOT EXISTS "+t+" ("
+                                                        "Username	TEXT NOT NULL"
+                                                        ");")
+        )
+    {
+        qDebug()<<qr.lastError();
+        return;
+    }
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+    }
+    return;
+}
+bool MyDatabase::InsertFollower_Following_Connecting(QString t,QString u)
+{
+    QSqlQuery qr;
+    if(! qr.prepare("INSERT INTO "+t+" ("
+                    " Username "
+                    " )"
+                    "VALUES (?);"
+                    )){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+
+    qr.addBindValue(u);
+
+
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+    return true;
+}
+bool MyDatabase::InsertConnection(QString t,QString u,QString s)
+{
+    QSqlQuery qr;
+    if(! qr.prepare("INSERT INTO "+t+" ("
+                    " Username ,"
+                    " Status "
+                    " )"
+                    "VALUES (?,?);"
+                    )){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+
+    qr.addBindValue(u);
+    qr.addBindValue(s);
+
+
+    if(! qr.exec()){
+        qDebug()<<qr.lastError();
+        return false;
+    }
+    return true;
+
 }

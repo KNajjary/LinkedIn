@@ -15,6 +15,19 @@ JobUi::JobUi(QString username, unsigned int number, QString u,QWidget *parent)
 
 
 }
+JobUi::JobUi(QString username, unsigned int number,QWidget *parent)
+    : QWidget(parent)
+    , Job(username,number)
+    ,ui(new Ui::JobUi)
+{
+    ui->setupUi(this);
+    PersonUsername=NULL;
+    //
+    SetLabels();
+    SetButton();
+
+
+}
 
 JobUi::~JobUi()
 {
@@ -45,6 +58,10 @@ void JobUi::SetLabels()
 }
 void JobUi::SetButton()
 {
+    if(PersonUsername.isNull()){
+        ui->pushButton_apply->hide();
+        return;
+    }
     QString text=GetStatus(PersonUsername);
 
     if(! text.isEmpty()){

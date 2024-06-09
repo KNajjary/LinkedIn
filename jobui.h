@@ -14,6 +14,7 @@ class JobUi : public QWidget , public Job
 
 public:
     explicit JobUi(QString , unsigned int , QString, QWidget *parent = nullptr);
+    explicit JobUi(QString , unsigned int , QWidget *parent = nullptr);
     ~JobUi();
 
 private slots:

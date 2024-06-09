@@ -6,12 +6,15 @@
 class Company : public Member
 {
     QString CompanyName,
-        StartYear;
+        StartYear,
+        FollowersTable;
 
 public:
     Company(QString);
     QString GetCompanyName() const;
     QString GetStartYear() const;
+    QString GetFollowersTable() const;
+    QString GetFollower(unsigned int) const;
 };
 
 #endif // COMPANY_H

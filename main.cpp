@@ -1,14 +1,21 @@
 
 #include "WelcomeWindow.h"
 #include "addcomment.h"
+#include "applylist.h"
+#include "applyview.h"
 #include "completecompanyinfo.h"
 #include "completeuserinfowindow.h"
 #include <QApplication>
+#include "jobicon.h"
 #include "jobui.h"
 #include "mydatabase.h"
+#include "mynetwork_company.h"
 #include "newjob.h"
 #include "newpost.h"
 #include "me.h"
+#include "profileicon.h"
+#include "viewjobs_company.h"
+#include "viewjobs_person.h"
 #include "viewprofile.h"
 int main(int argc, char *argv[])
 {
@@ -35,8 +42,17 @@ int main(int argc, char *argv[])
     //vp.show();
     //NewJob nj("Ali");
     //nj.show();
-    JobUi jui("Ali",6,"kosar");
-    jui.show();
+    //ViewJobs_Company jui("Ali");
+    //jui.show();
+    //ProfileIcon p("Ali","rt");
+    //p.show();
+    MyNetwork_Company n("Ali");
+    n.show();
+    //ApplyList al("Ali",6);
+    //al.show();
+    //ApplyView av("Ali_Job_6_Applys",1);
+    //av.show();
+
     /*CompleteUserInfoWindow cw;
     cw.show();*/
 

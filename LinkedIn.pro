@@ -10,6 +10,8 @@ CONFIG += c++17
 
 SOURCES += \
     addcomment.cpp \
+    applylist.cpp \
+    applyview.cpp \
     comment.cpp \
     company.cpp \
     completecompanyinfo.cpp \
@@ -19,6 +21,7 @@ SOURCES += \
     functions.cpp \
     LogAndSignInWindow.cpp \
     job.cpp \
+    jobicon.cpp \
     jobui.cpp \
     main.cpp \
     WelcomeWindow.cpp \
@@ -26,19 +29,25 @@ SOURCES += \
     member.cpp \
     message.cpp \
     mydatabase.cpp \
+    mynetwork_company.cpp \
+    mynetwork_person.cpp \
     newjob.cpp \
     newpost.cpp \
     person.cpp \
     post.cpp \
     postui.cpp \
+    profileicon.cpp \
     user.cpp \
     verificationwindow.cpp \
+    viewjobs_company.cpp \
     viewjobs_person.cpp \
     viewprofile.cpp
 
 HEADERS += \
     WelcomeWindow.h \
     addcomment.h \
+    applylist.h \
+    applyview.h \
     comment.h \
     company.h \
     completecompanyinfo.h \
@@ -48,19 +57,24 @@ HEADERS += \
     functions.h \
     LogAndSignInWindow.h \
     job.h \
+    jobicon.h \
     jobui.h \
     me.h \
     member.h \
     message.h \
     mydatabase.h \
+    mynetwork_company.h \
+    mynetwork_person.h \
     newjob.h \
     newpost.h \
     person.h \
     post.h \
     postui.h \
+    profileicon.h \
     structs.h \
     user.h \
     verificationwindow.h \
+    viewjobs_company.h \
     viewjobs_person.h \
     viewprofile.h
 
@@ -68,17 +82,24 @@ FORMS += \
     WelcomeWindow.ui \
     LogAndSignInWindow.ui \
     addcomment.ui \
+    applylist.ui \
+    applyview.ui \
     comment.ui \
     completecompanyinfo.ui \
     completeuserinfowindow.ui \
     conversation.ui \
+    jobicon.ui \
     jobui.ui \
     me.ui \
     message.ui \
+    mynetwork_company.ui \
+    mynetwork_person.ui \
     newjob.ui \
     newpost.ui \
     postui.ui \
+    profileicon.ui \
     verificationwindow.ui \
+    viewjobs_company.ui \
     viewjobs_person.ui \
     viewprofile.ui
 

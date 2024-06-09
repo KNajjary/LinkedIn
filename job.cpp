@@ -23,6 +23,8 @@ Job::Job(QString u ,QString name,QString comp,QString workplace,QString location
     qDebug()<< Number;
     AppliedTable = Username +"_Job_"+QString::number(Number)+"_Applys";
     db.CreateJobApplyTable(AppliedTable);
+    db.InsertInJobs(Username,Number);
+
 
 
 
