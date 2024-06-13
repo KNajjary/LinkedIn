@@ -12,9 +12,13 @@ class Person : public Member
 public:
     Person(QString);
     QString GetSkills()const;
+    QString GetConnectingsTable() const;
+    QString GetConnectionsTable() const;
     void FollowCompany(QString);
     void RequestConnection(QString);
     void SetStateConnection(QString,QString);
+    bool IsConnecting(QString);//is connecting to a person or not
+    bool IsFollowing(QString);//is following a company  or not
 };
 
 #endif // PERSON_H

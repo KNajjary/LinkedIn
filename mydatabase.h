@@ -27,6 +27,7 @@ public:
     bool InsertInJobs(QString,unsigned int);
     bool InsertFollower_Following_Connecting(QString,QString);
     bool InsertConnection(QString,QString,QString);
+
     //
     QString SelectWhere(QString , QString ,QString ,QString  ,unsigned int);//table / where=value/ find nth field
     QString SelectWhere(QString , QString ,int ,QString  ,unsigned int);//table / where=value/ find nth field
@@ -39,7 +40,7 @@ public:
     void CreateJobsTable(QString);
     void CreateJobApplyTable(QString);
     void CreateConnectionsTable(QString);
-    void CreateConnectingTable(QString);
+    void CreateConnectingsTable(QString);
     void CreateFollowers_Following_Table(QString);
     //
     unsigned int GetNumberOfRows(QString);

@@ -10,6 +10,7 @@
 #include "jobui.h"
 #include "mydatabase.h"
 #include "mynetwork_company.h"
+#include "mynetwork_person.h"
 #include "newjob.h"
 #include "newpost.h"
 #include "me.h"
@@ -28,6 +29,8 @@ int main(int argc, char *argv[])
     //NewPost con;
     //con.show();
     //MyDatabase d;
+    //d.CreateConnectionsTable("Ali_Connections");
+    //d.CreateConnectingsTable("Ali_Connectings");
     //qDebug()<< d.SelectMax("Ali_Posts","RowNumber");
     //d.CreatePostsTable();
     //d.CreatePostsTable("Ali");
@@ -46,7 +49,7 @@ int main(int argc, char *argv[])
     //jui.show();
     //ProfileIcon p("Ali","rt");
     //p.show();
-    MyNetwork_Company n("Ali");
+    MyNetwork_Person n("Ali");
     n.show();
     //ApplyList al("Ali",6);
     //al.show();

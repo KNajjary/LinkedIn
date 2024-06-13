@@ -16,6 +16,7 @@ SOURCES += \
     company.cpp \
     completecompanyinfo.cpp \
     completeuserinfowindow.cpp \
+    connectionreqicon.cpp \
     content.cpp \
     conversation.cpp \
     functions.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     company.h \
     completecompanyinfo.h \
     completeuserinfowindow.h \
+    connectionreqicon.h \
     content.h \
     conversation.h \
     functions.h \
@@ -87,6 +89,7 @@ FORMS += \
     comment.ui \
     completecompanyinfo.ui \
     completeuserinfowindow.ui \
+    connectionreqicon.ui \
     conversation.ui \
     jobicon.ui \
     jobui.ui \

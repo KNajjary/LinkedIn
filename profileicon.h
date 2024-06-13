@@ -16,10 +16,15 @@ public:
     explicit ProfileIcon(QString,QString,QWidget *parent = nullptr);
     ~ProfileIcon();
 
+private slots:
+    void on_pushButton_ViewProf_clicked();
+
+    void on_pushButton_ConFol_clicked();
+
 private:
     Ui::ProfileIcon *ui;
-    Member * member;
-    QString PersonUsername;
+    Member * member,* me;
+    QString PersonUsername,MyUsername;
     bool IsPerson,IAmCompany;
 };
 

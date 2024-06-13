@@ -414,7 +414,7 @@ void MyDatabase::CreateConnectionsTable(QString t)
     }
     return;
 }
-void MyDatabase::CreateConnectingTable(QString t)
+void MyDatabase::CreateConnectingsTable(QString t)
 {
     QSqlQuery qr;
     if ( !qr.prepare("CREATE TABLE IF NOT EXISTS "+t+" ("

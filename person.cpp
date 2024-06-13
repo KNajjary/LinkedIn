@@ -26,7 +26,7 @@ void Person::FollowCompany(QString u)
 void Person::RequestConnection(QString u)
 {
     MyDatabase db;
-    db.CreateConnectingTable(ConnectingsTable);
+    db.CreateConnectingsTable(ConnectingsTable);
     db.CreateConnectionsTable(u+"_Connections");
     db.InsertConnection(u+"_Connections",GetUsername(),"Pending");
 }
@@ -34,5 +34,37 @@ void Person::SetStateConnection(QString u,QString state)
 {
     MyDatabase db;
     db.Update(ConnectionsTable,"Username",u,"Status",state);
+    if(state=="Accepted"){
+        db.CreateConnectingsTable(u+"_Connectings");
+        db.InsertFollower_Following_Connecting(u+"_Connectings",GetUsername());
+    }
 }
+QString Person::GetConnectingsTable() const
+{
+    return ConnectingsTable;
 
+}
+QString Person::GetConnectionsTable() const
+{
+    return ConnectionsTable;
+}
+bool Person::IsConnecting(QString u){
+    MyDatabase db;
+    int i=db.GetNumberOfRows(ConnectingsTable);
+    while(i>0 && db.Select(ConnectingsTable,"Username",i)!= u){
+        i--;
+    }
+    if(i==0)return false;
+    else return true;
+}
+bool Person::IsFollowing(QString u)
+{
+    MyDatabase db;
+    int i=db.GetNumberOfRows(FollowingsTable);
+    while(i>0 && db.Select(FollowingsTable,"Username",i)!= u){
+        i--;
+    }
+    if(i==0)return false;
+    else return true;
+
+}
