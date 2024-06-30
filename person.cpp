@@ -68,3 +68,11 @@ bool Person::IsFollowing(QString u)
     else return true;
 
 }
+bool Person::HasRequestedConnection(QString u){
+    MyDatabase db;
+    return db.DoesExist(ConnectionsTable,"Username",u);
+}
+QString Person::GetFollowingsTable() const
+{
+    return FollowingsTable;
+}

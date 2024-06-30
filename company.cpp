@@ -27,3 +27,8 @@ QString Company::GetFollower(unsigned int n) const
      MyDatabase db;
     return db.Select(FollowersTable,"Username",n);
 }
+void Company::AddFollower(QString u)
+{
+    MyDatabase db;
+    db.InsertFollower_Following_Connecting(FollowersTable,u);
+}

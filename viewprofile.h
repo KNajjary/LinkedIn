@@ -13,7 +13,7 @@ class ViewProfile : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ViewProfile(QString , QWidget *parent = nullptr);
+    explicit ViewProfile(QString ,QString , QWidget *parent = nullptr);
     ~ViewProfile();
 
 private slots:
@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::ViewProfile *ui;
-    QString Username;
+    QString Username,MyUsername;
     Member * member;
     bool IsCompany;
     void SetLabels();

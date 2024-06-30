@@ -82,7 +82,7 @@ ProfileIcon::~ProfileIcon()
 
 void ProfileIcon::on_pushButton_ViewProf_clicked()
 {
-    ViewProfile * v= new ViewProfile(PersonUsername);
+    ViewProfile * v= new ViewProfile(PersonUsername,MyUsername);
     v->setWindowModality(Qt::ApplicationModal);
     v->show();
 }

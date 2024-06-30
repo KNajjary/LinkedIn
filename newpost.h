@@ -12,7 +12,7 @@ class NewPost : public QWidget
     Q_OBJECT
 
 public:
-    explicit NewPost(QWidget *parent = nullptr);
+    explicit NewPost(QString,QWidget *parent = nullptr);
     ~NewPost();
 
 private slots:
@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::NewPost *ui;
-    QString ImageAddress;
+    QString ImageAddress,Username;
 };
 
 #endif // NEWPOST_H

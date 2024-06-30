@@ -6,6 +6,7 @@
 #include "completecompanyinfo.h"
 #include "completeuserinfowindow.h"
 #include <QApplication>
+#include "home.h"
 #include "jobicon.h"
 #include "jobui.h"
 #include "mydatabase.h"
@@ -29,6 +30,7 @@ int main(int argc, char *argv[])
     //NewPost con;
     //con.show();
     //MyDatabase d;
+    //qDebug()<<d.DoesExist("Ali_Followers","Username","moo");
     //d.CreateConnectionsTable("Ali_Connections");
     //d.CreateConnectingsTable("Ali_Connectings");
     //qDebug()<< d.SelectMax("Ali_Posts","RowNumber");
@@ -49,13 +51,18 @@ int main(int argc, char *argv[])
     //jui.show();
     //ProfileIcon p("Ali","rt");
     //p.show();
-    MyNetwork_Person n("Ali");
-    n.show();
+    //MyNetwork_Person n("Ali");
+    //n.show();
     //ApplyList al("Ali",6);
     //al.show();
     //ApplyView av("Ali_Job_6_Applys",1);
     //av.show();
-
+    //PostUi p("Ali",1,"rt");
+    //p.show();
+    //MyDatabase db;
+    //db.InsertLike("Ali_Post1_Likes","Username","TimeSenttoString");
+    //MyDatabase db;
+    //db.Update("Ali_Posts","RowNumber",1,"RepostCounter",2);
     /*CompleteUserInfoWindow cw;
     cw.show();*/
 
@@ -64,7 +71,8 @@ int main(int argc, char *argv[])
 */
     //LogAndSignInWindow lw;
     //lw.show();
-
+    Home h("Ali");
+    h.show();
 
     //}
 

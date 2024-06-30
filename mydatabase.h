@@ -20,13 +20,14 @@ public:
     bool Update(QString ,QString,int ,QString ,int  );
     //
     bool InsertComment(QString,QString,QString,QString,QString);
-    bool InsertPost(QString , QString,QString,QString);
+    bool InsertPost(QString , QString,QString,QString,bool);
     bool InsertJob(QString TableName,QString  Name,QString Company,QString WorkplaceType,QString Location,QString Time,QString SkillsRequired,QString Salary,QString TimeCreated,QString f);
     bool InsertJob(Job);
     bool InsertApply(QString,QString,QString);
     bool InsertInJobs(QString,unsigned int);
     bool InsertFollower_Following_Connecting(QString,QString);
     bool InsertConnection(QString,QString,QString);
+    bool InsertLike(QString,QString,QString);
 
     //
     QString SelectWhere(QString , QString ,QString ,QString  ,unsigned int);//table / where=value/ find nth field
@@ -44,6 +45,8 @@ public:
     void CreateFollowers_Following_Table(QString);
     //
     unsigned int GetNumberOfRows(QString);
+    //unsigned int GetNumberOfRowsWith(QString,QString,QString);
+    bool DoesExist(QString ,QString ,QString );
     //bool CreateMessagesTable();
 };
 //----------------------------------------------------------

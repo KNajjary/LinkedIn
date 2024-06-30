@@ -6,14 +6,15 @@
 #include "ui_viewprofile.h"
 #include <ostream>
 
-ViewProfile::ViewProfile(QString u,QWidget *parent)
+ViewProfile::ViewProfile(QString u, QString mu, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::ViewProfile)
 {
     ui->setupUi(this);
     Username=u;
+    MyUsername=mu;
     MyDatabase db;
-    IsCompany = db.SelectWhere("Users","Username",u,"IsCompany",1).toInt();
+    IsCompany = db.SelectWhere("Users","Username",Username,"IsCompany",1).toInt();
     if(IsCompany)
         member= new Company(Username);
     else
@@ -59,8 +60,8 @@ void ViewProfile::ShowPosts()
     MyDatabase db;
     for(;i>0;i--)
     {
-        PostUi * post=new PostUi(member->GetPostsTable(),i,ui->stackedWidget_Posts);
-        post->HideSeeMoreBut();
+        PostUi * post=new PostUi(member->GetPostsTable(),i,MyUsername,ui->stackedWidget_Posts);
+        //post->HideSeeMoreBut();
         post->show();
         qDebug()<< ui->stackedWidget_Posts->addWidget(post);
 

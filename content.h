@@ -4,7 +4,7 @@
 class Content
 {
     QString SenderUsername;
-    QString ID;
+    unsigned int  Number;
     QDateTime TimeSent;
     QString Text;
     QString Picture;
@@ -19,13 +19,16 @@ protected:
     void SetText(QString);
     void SetPicture(QString);
     void SetTimeSent();
+    void SetTimeSent(const QDateTime);
     void SetSenderUsername(QString);
-    QString GetSenderUsername();
-    QString GetID();
-    QString GetTimeSent();
-    QString GetText();
-    QString GetPicture();
-    QString GetTableName();
+    void SetNumber(unsigned int);
+    //------------------
+    QString GetSenderUsername()const;
+    unsigned int GetNumber()const;
+    QString GetTimeSent()const;
+    QString GetText()const;
+    QString GetPicture()const;
+    QString GetTableName()const;
 };
 
 #endif // CONTENT_H

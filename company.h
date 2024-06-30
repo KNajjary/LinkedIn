@@ -15,6 +15,7 @@ public:
     QString GetStartYear() const;
     QString GetFollowersTable() const;
     QString GetFollower(unsigned int) const;
+    void AddFollower(QString);
 };
 
 #endif // COMPANY_H

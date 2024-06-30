@@ -1,13 +1,13 @@
 #include "content.h"
-QString Content::GetTimeSent()
+QString Content::GetTimeSent()const
 {
     return TimeSent.toString();
 }
-QString Content::GetText()
+QString Content::GetText()const
 {
     return Text;
 }
-QString Content::GetPicture()
+QString Content::GetPicture()const
 {
     return Picture;
 }
@@ -23,9 +23,9 @@ void Content::SetTimeSent()
 {
     TimeSent=QDateTime::currentDateTime();
 }
-QString Content::GetID()
+unsigned int Content::GetNumber()const
 {
-    return ID;
+    return Number;
 }
 /*Content::Content()
 {
@@ -38,7 +38,7 @@ void Content::SetSenderUsername(QString u)
 {
     SenderUsername=u;
 }
-QString Content::GetSenderUsername()
+QString Content::GetSenderUsername()const
 {
     return SenderUsername;
 }
@@ -46,7 +46,14 @@ void Content::SetTableName(QString t)
 {
     TableName = t;
 }
-QString Content::GetTableName()
+QString Content::GetTableName() const
 {
     return TableName;
+}
+void Content::SetNumber(unsigned int n)
+{
+    Number=n;
+}
+void Content::SetTimeSent(const QDateTime t){
+    TimeSent=t;
 }

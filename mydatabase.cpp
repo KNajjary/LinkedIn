@@ -37,7 +37,7 @@ bool MyDatabase::Update(QString t,QString column,int value,QString f,int  v)
     bool result=false;
 
     QSqlQuery qr;
-    if (qr.prepare("UPDATE "+t+" SET "+ f +  " = ? WHERE "+column+" = ? ;"))
+    if (qr.prepare("UPDATE "+t+" SET "+ f +" =? WHERE "+column+" =? ;"))
     {
         qr.addBindValue(v);
         qr.addBindValue(value);
@@ -46,7 +46,7 @@ bool MyDatabase::Update(QString t,QString column,int value,QString f,int  v)
         else qDebug()<< "Query execution failed: " << qr.lastError().text();
     }
     else qDebug()<< "Query execution failed: " << qr.lastError().text();
-    qDebug()<<"#######num######"<< qr.lastError().text();
+    //qDebug()<<"#######num######"<< qr.lastError().text();
     return result;
 
 }
@@ -74,7 +74,7 @@ void MyDatabase::CreatePostsTable(QString name){
     QSqlQuery qr; //Username TEXT NOT NULL
     if(
        qr.prepare( "CREATE TABLE IF NOT EXISTS " +name+
-                   " ( TimeSent TEXT NOT NULL, Picture	TEXT,Text TEXT, RepostCounter INTEGER, ShareCounter	INTEGER , CommentCounter INTEGER , LikeCounter INTEGER  , RowNumber INTEGER , PRIMARY KEY( RowNumber AUTOINCREMENT) );")
+                   " ( TimeSent TEXT NOT NULL, Picture	TEXT,Text TEXT, RepostCounter INTEGER, ShareCounter	INTEGER , CommentCounter INTEGER , LikeCounter INTEGER  , RowNumber INTEGER , IsARepost	INTEGER, PRIMARY KEY( RowNumber AUTOINCREMENT) );")
         )
     {
         if(!qr.exec()) qDebug()<< qr.lastError().text();
@@ -160,9 +160,12 @@ bool MyDatabase::InsertComment(QString TableName,QString Username,QString Text,Q
     Update(TableName,"RowNumber",1,"CommentCounter",++ComNum);
     return true;
 }
-bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QString TimeSent)
+bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QString TimeSent,bool isaRepost)
 {
-    //MyDatabase db;
+    unsigned int IsARepost;
+    if(isaRepost)IsARepost=1;
+    else IsARepost=0;
+
     QSqlQuery qr;
     if(! qr.prepare("INSERT INTO "+TableName+" ("
                                             "TimeSent , "
@@ -171,8 +174,9 @@ bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QStr
                                             "RepostCounter ,"
                                             "ShareCounter ,"
                                             "CommentCounter ,"
-                                            "LikeCounter "
-                                            " ) VALUES (?,?,?,?,?,?,?);") )
+                                            "LikeCounter ,"
+                                            " IsARepost "
+                                            " ) VALUES (?,?,?,?,?,?,?,?);") )
     {
         qDebug() << "error 1 adding post to table in database" << qr.lastError().text() ;
         return false;
@@ -184,6 +188,7 @@ bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QStr
     qr.addBindValue(0);
     qr.addBindValue(0);
     qr.addBindValue(0);
+    qr.addBindValue(IsARepost);
 
 
     if(!qr.exec()){
@@ -397,6 +402,7 @@ unsigned int MyDatabase::GetNumberOfRows(QString t)
     return row_count;
 
 }
+
 void MyDatabase::CreateConnectionsTable(QString t)
 {
     QSqlQuery qr;
@@ -490,4 +496,41 @@ bool MyDatabase::InsertConnection(QString t,QString u,QString s)
     }
     return true;
 
+}
+ bool MyDatabase::InsertLike(QString t,QString u,QString ti)
+{
+     QSqlQuery qr;
+     if(! qr.prepare("INSERT INTO "+t+" ("
+                                          "Username ,"
+                                          " Time "
+                                          ")"
+                                          "VALUES (?,?);"
+                     )){
+         qDebug()<<qr.lastError();
+         return false;
+     }
+
+     qr.addBindValue(u);
+     qr.addBindValue(ti);
+
+
+     if(! qr.exec()){
+         qDebug()<<qr.lastError();
+         return false;
+     }
+     return true;
+
+}
+bool MyDatabase::DoesExist(QString t,QString where,QString value)
+{
+    QSqlQuery qr;
+    qr.prepare("SELECT * FROM "+t+"  WHERE  "+where+" = ? ;");
+    //qDebug()<<qr.lastError().text();
+    qr.addBindValue(value);
+    qr.exec();
+    //qDebug()<<qr.lastError().text();
+
+    /*if (qr.value(0).isNull())return false;
+    else return true;*/
+    return qr.first();
 }

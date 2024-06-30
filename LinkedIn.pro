@@ -21,9 +21,11 @@ SOURCES += \
     conversation.cpp \
     functions.cpp \
     LogAndSignInWindow.cpp \
+    home.cpp \
     job.cpp \
     jobicon.cpp \
     jobui.cpp \
+    like.cpp \
     main.cpp \
     WelcomeWindow.cpp \
     me.cpp \
@@ -38,6 +40,7 @@ SOURCES += \
     post.cpp \
     postui.cpp \
     profileicon.cpp \
+    root.cpp \
     user.cpp \
     verificationwindow.cpp \
     viewjobs_company.cpp \
@@ -58,9 +61,11 @@ HEADERS += \
     conversation.h \
     functions.h \
     LogAndSignInWindow.h \
+    home.h \
     job.h \
     jobicon.h \
     jobui.h \
+    like.h \
     me.h \
     member.h \
     message.h \
@@ -73,6 +78,7 @@ HEADERS += \
     post.h \
     postui.h \
     profileicon.h \
+    root.h \
     structs.h \
     user.h \
     verificationwindow.h \
@@ -91,6 +97,7 @@ FORMS += \
     completeuserinfowindow.ui \
     connectionreqicon.ui \
     conversation.ui \
+    home.ui \
     jobicon.ui \
     jobui.ui \
     me.ui \
@@ -101,6 +108,7 @@ FORMS += \
     newpost.ui \
     postui.ui \
     profileicon.ui \
+    root.ui \
     verificationwindow.ui \
     viewjobs_company.ui \
     viewjobs_person.ui \

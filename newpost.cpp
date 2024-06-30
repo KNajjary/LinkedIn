@@ -1,15 +1,17 @@
 #include "newpost.h"
+#include "post.h"
 #include "ui_newpost.h"
 
 #include <QFileDialog>
 
-NewPost::NewPost(QWidget *parent)
+NewPost::NewPost(QString u, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::NewPost)
 {
     ui->setupUi(this);
     ImageAddress=nullptr;
     ui->label_Image->hide();
+    Username= u;
 }
 
 NewPost::~NewPost()
@@ -39,6 +41,9 @@ void NewPost::on_pushButton_selectImage_clicked()
 
 void NewPost::on_pushButton_sendPost_clicked()
 {
-    //Post();
+    Post post(Username,ui->textEdit->toPlainText(),ImageAddress,false);
+    ui->label_Image->hide();
+    ImageAddress=nullptr;
+    ui->textEdit->clear();
 }
 

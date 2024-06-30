@@ -8,8 +8,8 @@ AddComment::AddComment(QString t,QString u,unsigned int n,QWidget *parent)
     , ui(new Ui::AddComment) ,TableName(t) , Username(u), PostNumber(n)
 {
     ui->setupUi(this);
-    Post = new PostUi(t,n);
-    Post->HideSeeMoreBut();
+    Post = new PostUi(TableName,PostNumber,Username);
+    //Post->HideSeeMoreBut();
     ui->verticalLayout_Post->addWidget(Post);
     ui->label_Image->hide();
 }
