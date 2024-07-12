@@ -1,5 +1,6 @@
 #include "completecompanyinfo.h"
 #include "mydatabase.h"
+#include "root.h"
 #include "ui_completecompanyinfo.h"
 #include "functions.h"
 CompleteCompanyInfo::CompleteCompanyInfo(QString u ,QWidget *parent)
@@ -75,6 +76,11 @@ void CompleteCompanyInfo::on_pushButton_Done_clicked()
     db.Update("Users","Username", Username ,"IsCompany", true );
 
 
+    Root * root = new Root(Username);
+    root->show();
+
+    this->close();
+    ui->~CompleteCompanyInfo();
 
 }
 

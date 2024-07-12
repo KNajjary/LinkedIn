@@ -6,17 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>593</width>
-    <height>423</height>
+    <width>668</width>
+    <height>417</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>282</x>
+     <x>330</x>
      <y>0</y>
      <width>31</width>
      <height>441</height>
@@ -35,12 +38,12 @@
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>271</width>
+     <x>20</x>
+     <y>20</y>
+     <width>311</width>
      <height>341</height>
     </rect>
    </property>
@@ -74,12 +77,12 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>10</y>
-     <width>270</width>
+     <x>360</x>
+     <y>20</y>
+     <width>291</width>
      <height>341</height>
     </rect>
    </property>
@@ -92,7 +95,19 @@
        </font>
       </property>
       <property name="text">
-       <string>People you nay want to connect</string>
+       <string>People you may want to connect</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_NoSuggest">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>No suggested person</string>
       </property>
      </widget>
     </item>
@@ -105,10 +120,10 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>40</x>
      <y>370</y>
      <width>271</width>
      <height>29</height>
@@ -117,6 +132,10 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPushButton" name="pushButton_pevReq">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(20,176,191);
+</string>
+      </property>
       <property name="text">
        <string>&lt;</string>
       </property>
@@ -124,6 +143,10 @@
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_nextReq">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(20,176,191);
+</string>
+      </property>
       <property name="text">
        <string>&gt;</string>
       </property>
@@ -131,10 +154,10 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>370</x>
      <y>370</y>
      <width>271</width>
      <height>29</height>
@@ -143,6 +166,10 @@
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QPushButton" name="pushButton_PrevSug">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(20,176,191);
+</string>
+      </property>
       <property name="text">
        <string>&lt;</string>
       </property>
@@ -150,6 +177,10 @@
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_nexSug">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(20,176,191);
+</string>
+      </property>
       <property name="text">
        <string>&gt;</string>
       </property>

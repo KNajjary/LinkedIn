@@ -63,11 +63,11 @@ void  ViewJobs_Company::ShowJobs()
     int i=JobCount;
     for(;i>0;i--){
         JobIcon * job=new JobIcon(Username,i);
-        job->show();
+        //job->show();
         ui->stackedWidget_Jobs->addWidget(job);
         //
         ApplyList * list=new ApplyList(Username,i);
-        list->show();
+        //list->show();
         ui->stackedWidget_applys->addWidget(list);
     }
     ui->stackedWidget_Jobs->setCurrentIndex(0);

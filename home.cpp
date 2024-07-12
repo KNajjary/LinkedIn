@@ -3,6 +3,7 @@
 #include "newpost.h"
 #include "person.h"
 #include "post.h"
+#include "qlabel.h"
 #include "ui_home.h"
 
 Home::Home(QString u, QWidget *parent)
@@ -19,6 +20,20 @@ Home::Home(QString u, QWidget *parent)
         AddPosts();
         SortPosts();
         ShowPosts();
+        ui->label_ImageForCompany->hide();
+    }
+    else{
+        ui->pushButton_next->hide();
+        ui->pushButton_prev->hide();
+        ui->pushButton_loadMoreP->hide();
+        //Label->setGeometry(ui->stackedWidget_Potst->geometry());
+
+        QPixmap Im("D://Linked In//CompanyHomeImage.png");
+        int LabelW,LabelH;
+        LabelH=ui->label_ImageForCompany->height();
+        LabelW=ui->label_ImageForCompany->width();
+        ui->label_ImageForCompany->setPixmap(Im.scaled(LabelW,LabelH,Qt::KeepAspectRatioByExpanding));
+
     }
 
 
@@ -203,21 +218,21 @@ void Home::ShowPosts()
     unsigned int i ;
     for(i=0; i<Posts1.size() ;i++){
         PostUi *p = new PostUi(Posts1[i].GetSenderUsername(),Posts1[i].GetNumber(),ViewerUsername);
-        p->show();
+        //p->show();
         ui->stackedWidget_Potst->addWidget(p);
 
     }
     //------------------------------------------------------
     for(i=0; i<Posts2.size() ;i++){
         PostUi *p = new PostUi(Posts2[i].GetSenderUsername(),Posts2[i].GetNumber(),ViewerUsername);
-        p->show();
+        p->ShowSuggestedLabel();
         ui->stackedWidget_Potst->addWidget(p);
 
     }
     //------------------------------------------------------
     for(i=0; i<Posts3.size() ;i++){
         PostUi *p = new PostUi(Posts3[i].GetSenderUsername(),Posts3[i].GetNumber(),ViewerUsername);
-        p->show();
+        //p->show();
         ui->stackedWidget_Potst->addWidget(p);
 
     }

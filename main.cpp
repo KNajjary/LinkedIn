@@ -16,6 +16,7 @@
 #include "newpost.h"
 #include "me.h"
 #include "profileicon.h"
+#include "root.h"
 #include "viewjobs_company.h"
 #include "viewjobs_person.h"
 #include "viewprofile.h"
@@ -23,10 +24,10 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    //WelcomeWindow ww;
+    WelcomeWindow ww;
     //ww.setStyleSheet("background-color:yellow;");
     //ww.setAutoFillBackground(true);
-    //ww.show();
+    ww.show();
     //NewPost con;
     //con.show();
     //MyDatabase d;
@@ -60,6 +61,8 @@ int main(int argc, char *argv[])
     //PostUi p("Ali",1,"rt");
     //p.show();
     //MyDatabase db;
+    //qDebug()<<db.GetNumberOfRowsWhere("Users","Career","nurs");
+
     //db.InsertLike("Ali_Post1_Likes","Username","TimeSenttoString");
     //MyDatabase db;
     //db.Update("Ali_Posts","RowNumber",1,"RepostCounter",2);
@@ -69,14 +72,21 @@ int main(int argc, char *argv[])
     /*VerificationWindow vw;
         vw.show();
 */
+    //Home h("rt");
+    //h.show();
     //LogAndSignInWindow lw;
     //lw.show();
-    Home h("Ali");
-    h.show();
-
+    //Root h("user1");
+    //h.show();
+    //ApplyList al("Ali",7);
+    //al.show();
+    ///
+    ///
     //}
-
-
+    //AddComment ad("rt",1,"Ali");
+    //ad.show();
+    //ViewJobs_Person h("user1");
+    //h.show();
     //
     return a.exec();
 }

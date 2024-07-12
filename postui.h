@@ -20,9 +20,11 @@ public:
     ~PostUi();
     //PostUi(const PostUi & ,QString);
     //void HideSeeMoreBut();
-    //void AddCommentCounter();
+    void AddCommentCounterAndLabel();
+    void DisableCommentButton();
     //void ShowRepostedLabel();
-
+    void DisableSenderUsernameBut();
+    void ShowSuggestedLabel();
 private slots:
     void on_pushButton_Like_clicked();
 
@@ -35,7 +37,11 @@ private slots:
     void on_pushButton_Follow_clicked();
 
     void on_pushButton_Connect_clicked();
-    void ShowSuggestedLabel();
+
+
+    void on_pushButton_Comment_clicked();
+
+    void on_pushButton_Sender_clicked();
 
 private:
     Ui::PostUi *ui;

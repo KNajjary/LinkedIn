@@ -32,7 +32,7 @@ void NewPost::on_pushButton_selectImage_clicked()
         int LabelW,LabelH;
         LabelH=ui->label_Image->height();
         LabelW=ui->label_Image->width();
-        ui->label_Image->setPixmap(Im.scaled(LabelW,LabelH,Qt::KeepAspectRatio));
+        ui->label_Image->setPixmap(Im.scaled(LabelW,LabelH,Qt::KeepAspectRatioByExpanding));
         ui->label_Image->show();
     }
 

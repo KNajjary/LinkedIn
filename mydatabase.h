@@ -19,7 +19,7 @@ public:
     bool Update(QString  , QString , QString , QString , bool  );
     bool Update(QString ,QString,int ,QString ,int  );
     //
-    bool InsertComment(QString,QString,QString,QString,QString);
+    bool InsertComment(QString,QString,QString,QString,QString,QString);
     bool InsertPost(QString , QString,QString,QString,bool);
     bool InsertJob(QString TableName,QString  Name,QString Company,QString WorkplaceType,QString Location,QString Time,QString SkillsRequired,QString Salary,QString TimeCreated,QString f);
     bool InsertJob(Job);
@@ -45,7 +45,8 @@ public:
     void CreateFollowers_Following_Table(QString);
     //
     unsigned int GetNumberOfRows(QString);
-    //unsigned int GetNumberOfRowsWith(QString,QString,QString);
+    unsigned int GetNumberOfRowsWhere(QString,QString,QString);
+    //
     bool DoesExist(QString ,QString ,QString );
     //bool CreateMessagesTable();
 };

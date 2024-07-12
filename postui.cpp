@@ -1,15 +1,17 @@
 #include "postui.h"
+#include "addcomment.h"
 #include "company.h"
 #include "mydatabase.h"
 #include "person.h"
 #include "qsqlerror.h"
 #include "ui_postui.h"
+#include "viewprofile.h"
 #include <QSqlTableModel>
 #include <QTableView>
 //#include <iostream>
-PostUi::PostUi(QString t, unsigned int n,QString u, QWidget *parent)
+PostUi::PostUi(QString su, unsigned int n,QString u, QWidget *parent)
     : QWidget(parent)
-    , Post(t,n) ,ui(new Ui::PostUi), ViewerUsername(u)
+    , Post(su,n) ,ui(new Ui::PostUi), ViewerUsername(u)
 {
     ui->setupUi(this);
     //
@@ -26,8 +28,13 @@ PostUi::PostUi(QString t, unsigned int n,QString u, QWidget *parent)
     else
     {
         QString s(GetText());
-        if(s.size() > TextLimit){
+        if(s.size() > TextLimit)
+        {
           s.resize(TextLimit);
+        }
+        else
+        {
+            ui->pushButton_SeeMore->hide();
         }
 
 
@@ -84,6 +91,9 @@ PostUi::PostUi(QString t, unsigned int n,QString u, QWidget *parent)
         }
 
     }
+    //
+    ui->pushButton_Sender->setText(GetSenderUsername());
+    ui->label_Time->setText(GetTimeSent());
 
 }
 /*PostUi::PostUi(const PostUi & p,QString v)
@@ -99,15 +109,16 @@ PostUi::~PostUi()
 /*void PostUi::HideSeeMoreBut(){
     ui->pushButton_SeeMore->hide();
 }*/
-/*void PostUi::AddCommentCounter(){
-    int ComC = ui->label_CommentC->text().toInt();
-    ComC++;
-    ui->label_CommentC->setText(QString::number(ComC));
-}*/
+void PostUi::AddCommentCounterAndLabel()
+{
+
+    ui->label_CommentC->setText(QString::number(AddCommentCounter()));
+}
 
 void PostUi::on_pushButton_Like_clicked()
 {
     ui->label_LikeC->setText(QString::number(AddLikeCounter( ViewerUsername)));
+    ui->pushButton_Like->setDisabled(true);
 }
 
 
@@ -162,3 +173,24 @@ void PostUi::ShowSuggestedLabel()
 {
     ui->label_suggested->show();
 }
+
+void PostUi::on_pushButton_Comment_clicked()
+{
+    AddComment * ad=new AddComment(GetSenderUsername(),GetNumber(),ViewerUsername);
+    ad->show();
+}
+void PostUi::DisableCommentButton()
+{
+    ui->pushButton_Comment->setDisabled(true);
+}
+
+void PostUi::on_pushButton_Sender_clicked()
+{
+    ViewProfile * vp = new ViewProfile(GetSenderUsername(),ViewerUsername);
+    vp->show();
+}
+void PostUi::DisableSenderUsernameBut()
+{
+    ui->pushButton_Sender->setDisabled(true);
+}
+

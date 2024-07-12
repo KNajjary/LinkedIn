@@ -43,6 +43,6 @@ void NewJob::on_pushButton_Create_clicked()
           ui->lineEdit_Salary->text(),
           ui->comboBox_Field->currentText());
 
-
+    this->close();
 }
 

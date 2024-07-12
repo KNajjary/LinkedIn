@@ -13,7 +13,7 @@ class AddComment : public QWidget
     Q_OBJECT
 
 public:
-    explicit AddComment(QString , QString,unsigned int ,QWidget *parent = nullptr);
+    explicit AddComment(QString,unsigned int , QString ,QWidget *parent = nullptr);
     ~AddComment();
 
 private slots:
@@ -21,10 +21,14 @@ private slots:
 
     void on_pushButton_chooseIm_clicked();
 
+    void on_pushButton_Next_clicked();
+
+    void on_pushButton_Prev_clicked();
+
 private:
     Ui::AddComment *ui;
     QString ImageAddress;
-    const QString TableName, Username;
+    const QString SenderUsername, ViewerUsername;
     unsigned int PostNumber;//= RowNumber
     PostUi * Post;
     //PostUi Post;

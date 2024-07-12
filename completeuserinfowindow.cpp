@@ -1,6 +1,7 @@
 #include "completeuserinfowindow.h"
 #include "completecompanyinfo.h"
 #include "mydatabase.h"
+#include "root.h"
 #include "ui_completeuserinfowindow.h"
 
 #include <QDebug>
@@ -156,6 +157,8 @@ void CompleteUserInfoWindow::on_pushButton_Done_clicked()
 
 
     if(! invalidity){
+        Root * root = new Root(Username);
+        root->show();
         this->close();
         ui->~CompleteUserInfoWindow();
     }

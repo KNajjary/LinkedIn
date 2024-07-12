@@ -12,7 +12,7 @@ MyDatabase::MyDatabase()
 }
 MyDatabase::~MyDatabase()
 {
-    database.close();
+    //database.close();
 }
 bool MyDatabase::Update(QString t, QString c, QString Username, QString f, QString  v)
 {
@@ -137,17 +137,17 @@ QString MyDatabase::Select(QString t,QString field ,unsigned int nth)//starting 
 
     return qr.value(0).toString();
 }
-bool MyDatabase::InsertComment(QString TableName,QString Username,QString Text,QString Picture,QString Time)
+bool MyDatabase::InsertComment(QString TableName,QString OwnerUsername,QString SenderUsername,QString Text,QString Picture,QString Time)
 {
     //MyDatabase db;
     QSqlQuery qr;
     qr.prepare("INSERT INTO "+TableName+" ("
-                                            "CommentUsername , "
-                                            "CommentText , "
-                                            "CommentPicture , "
-                                            "CommentTimeSent )"
+                                            "Username , "
+                                            "Text , "
+                                            "Picture , "
+                                            "TimeSent )"
                                             "VALUES (?,?,?,?);");
-    qr.addBindValue(Username);
+    qr.addBindValue(SenderUsername);
     qr.addBindValue(Text);
     qr.addBindValue(Picture);
     qr.addBindValue(Time);
@@ -156,8 +156,8 @@ bool MyDatabase::InsertComment(QString TableName,QString Username,QString Text,Q
         qDebug() << "error adding comment to table in database" << qr.lastError().text() ;
         return false;
     }
-    int ComNum = SelectWhere(TableName,"RowNumber",1,"CommentCounter",1).toInt();
-    Update(TableName,"RowNumber",1,"CommentCounter",++ComNum);
+    //int ComNum = GetNumberOfRows(TableName);
+    //Update(OwnerUsername+"_Posts","TimeSent",Time,"CommentCounter",ComNum);
     return true;
 }
 bool MyDatabase::InsertPost(QString TableName, QString Text,QString Picture,QString TimeSent,bool isaRepost)
@@ -533,4 +533,20 @@ bool MyDatabase::DoesExist(QString t,QString where,QString value)
     /*if (qr.value(0).isNull())return false;
     else return true;*/
     return qr.first();
+}
+unsigned int MyDatabase::GetNumberOfRowsWhere(QString table,QString field,QString value)
+{
+   QSqlQuery qr;
+    int row_count = 0;
+
+    qr.prepare("SELECT COUNT(*) FROM "+table+" WHERE "+field+" = ? ;");
+    qr.addBindValue(value);
+    if(! qr.exec())
+        qDebug()<<qr.lastError().text();
+
+
+    if(qr.first())
+        row_count = qr.value(0).toInt();
+    qDebug()<<qr.lastError().text();
+    return row_count;
 }

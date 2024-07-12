@@ -60,9 +60,11 @@ void ViewProfile::ShowPosts()
     MyDatabase db;
     for(;i>0;i--)
     {
-        PostUi * post=new PostUi(member->GetPostsTable(),i,MyUsername,ui->stackedWidget_Posts);
+        PostUi * post=new PostUi(member->GetUsername(),i,MyUsername,ui->stackedWidget_Posts);
         //post->HideSeeMoreBut();
-        post->show();
+        post->DisableSenderUsernameBut();
+        //post->show();
+
         qDebug()<< ui->stackedWidget_Posts->addWidget(post);
 
         //box_Posts

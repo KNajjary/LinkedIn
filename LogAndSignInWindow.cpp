@@ -1,4 +1,5 @@
 #include "LogAndSignInWindow.h"
+#include "root.h"
 #include "ui_LogAndSignInWindow.h"
 
 #include "functions.h"
@@ -75,8 +76,10 @@ void LogAndSignInWindow::on_PushButton_LogIn_clicked()
 
 
     if(User::CheckPasswordInDB(un,p)==1){
+        Root * root = new Root(un);
+        root->show();
         this->close();
-        ui->~LogAndSignInWindow();
+        //ui->~LogAndSignInWindow();
         return;
     }
     if(User::CheckPasswordInDB(un,p)==0){

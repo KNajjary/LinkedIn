@@ -14,8 +14,26 @@ MyNetwork_Person::MyNetwork_Person(QString u, QWidget *parent)
     RequestsCount=db.GetNumberOfRows(person->GetConnectionsTable());
     ShowRequests();
     ShowSuggests();
+    //
     if(ui->stackedWidget_Req->currentIndex() != -1)
+    {
         ui->label_NoInv->hide();
+
+    }
+    else
+    {
+        ui->pushButton_nextReq->hide();
+        ui->pushButton_pevReq->hide();
+    }
+    //
+    if(ui->stackedWidget_Sug->currentIndex() != -1){
+        ui->label_NoSuggest->hide();
+    }
+    else
+    {
+        ui->pushButton_PrevSug->hide();
+        ui->pushButton_nexSug->hide();
+    }
 }
 
 MyNetwork_Person::~MyNetwork_Person()
@@ -30,7 +48,7 @@ void MyNetwork_Person::ShowRequests()
         if( db.Select(person->GetConnectionsTable(),"Status",i)!= "Pending")
             continue;
         ConnectionReqIcon * icon = new ConnectionReqIcon(person->GetUsername(),db.Select(person->GetConnectionsTable(),"Username",i));
-        icon->show();
+        //icon->show();
         ui->stackedWidget_Req->addWidget(icon);
     }
 
@@ -44,10 +62,42 @@ void MyNetwork_Person::ShowSuggests()
         if(db.Select(UsersTable,"IsCompany",i).toInt()==1)
             continue;
         QString Username= db.Select(UsersTable,"Username",i);
-        if(person->IsConnecting(Username))
+        if(person->IsConnecting(Username) || Username==person->GetUsername())
             continue;
         ProfileIcon * icon = new ProfileIcon(person->GetUsername(),Username);
-        icon->show();
+        //icon->show();
         ui->stackedWidget_Sug->addWidget(icon);
     }
 }
+
+void MyNetwork_Person::on_pushButton_nexSug_clicked()
+{
+    int i=ui->stackedWidget_Sug->currentIndex();
+    i++;
+    ui->stackedWidget_Sug->setCurrentIndex(i);
+}
+
+
+void MyNetwork_Person::on_pushButton_PrevSug_clicked()
+{
+    int i=ui->stackedWidget_Sug->currentIndex();
+    i--;
+    ui->stackedWidget_Sug->setCurrentIndex(i);
+}
+
+
+void MyNetwork_Person::on_pushButton_nextReq_clicked()
+{
+    int i=ui->stackedWidget_Req->currentIndex();
+    i++;
+    ui->stackedWidget_Req->setCurrentIndex(i);
+}
+
+
+void MyNetwork_Person::on_pushButton_pevReq_clicked()
+{
+    int i=ui->stackedWidget_Req->currentIndex();
+    i--;
+    ui->stackedWidget_Req->setCurrentIndex(i);
+}
+

@@ -16,7 +16,7 @@ ApplyList::ApplyList(QString username,unsigned int n,QWidget *parent)
     //ui->toolBox_Applys->removeItem(0);
     for(;i>0;i--){
         ApplyView * ap=new ApplyView(Table,i);
-        ap->show();
+        //ap->show();
         ui->toolBox_Applys->addItem(ap,"Person"+QString::number(i));
 
     }

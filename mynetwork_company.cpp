@@ -14,10 +14,21 @@ MyNetwork_Company::MyNetwork_Company(QString u,QWidget *parent)
 
     int i=db.GetNumberOfRows(company->GetFollowersTable());
 
-    for(;i>0;i--){
-        ProfileIcon * p=new ProfileIcon(company->GetFollower(i),company->GetUsername());
-        p->show();
+    for(;i>0;i--)
+    {
+        ProfileIcon * p=new ProfileIcon(company->GetUsername(),company->GetFollower(i));
+        //p->show();
         ui->stackedWidget_followers->addWidget(p);
+    }
+    //
+    if(ui->stackedWidget_followers->currentIndex() != -1)
+    {
+        ui->label_NoFollower->hide();
+    }
+    else
+    {
+        ui->pushButton_next->hide();
+        ui->pushButton_prev->hide();
     }
 }
 

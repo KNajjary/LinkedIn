@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(190, 242, 255);
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -242,6 +246,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_Create">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(20,176,191);
+</string>
+       </property>
        <property name="text">
         <string>Create</string>
        </property>

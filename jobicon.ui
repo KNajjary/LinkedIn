@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>351</width>
-    <height>118</height>
+    <width>381</width>
+    <height>148</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,21 +18,21 @@
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>101</width>
-     <height>81</height>
+     <width>151</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>121</x>
-     <y>18</y>
-     <width>211</width>
-     <height>86</height>
+     <x>170</x>
+     <y>20</y>
+     <width>201</width>
+     <height>111</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -62,6 +62,10 @@
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_View">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(20,176,191);
+</string>
+      </property>
       <property name="text">
        <string>View</string>
       </property>
@@ -69,6 +73,29 @@
     </item>
    </layout>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>381</width>
+     <height>148</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(190, 242, 255);
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>label_Prof</zorder>
+  <zorder>layoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>

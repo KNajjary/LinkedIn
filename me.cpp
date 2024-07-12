@@ -72,7 +72,7 @@ void Me::ShowImage()
     int LabelW,LabelH;
     LabelH=ui->label_Picture->height();
     LabelW=ui->label_Picture->width();
-    ui->label_Picture->setPixmap(Im.scaled(LabelW,LabelH,Qt::KeepAspectRatio));
+    ui->label_Picture->setPixmap(Im.scaled(LabelW,LabelH,Qt::KeepAspectRatioByExpanding));
 
 }
 
@@ -95,15 +95,15 @@ void Me::on_pushButton_EditProfile_clicked()
     {
         CompleteCompanyInfo * n= new CompleteCompanyInfo(member->GetUsername());
         n->show();
-        this->close();
+        //this->close();
     }
     else
     {
         CompleteUserInfoWindow * n=new CompleteUserInfoWindow(member->GetUsername());
         n->Hide_pushButton_AreYouCompany();
         n->show();
-        this->close();
-        //if(n->)
+        //this->close();
+
     }
 
     //member = new Member(Username);
@@ -118,6 +118,6 @@ void Me::on_pushButton_AreYouCompany_clicked()
     ui->pushButton_AreYouCompany->hide();
     CompleteCompanyInfo * n= new CompleteCompanyInfo(member->GetUsername());
     n->show();
-    this->close();
+    //this->close();
 }
 
